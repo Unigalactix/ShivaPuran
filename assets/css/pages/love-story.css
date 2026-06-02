@@ -1,0 +1,306 @@
+/* ===========================================================
+   LOVE STORY PAGE — assets/css/pages/love-story.css
+   7 illuminated chapters · vertical timeline · pull-quote shloka
+   =========================================================== */
+
+/* ---------- HERO ---------- */
+.ls-hero {
+  position: relative;
+  padding: clamp(4rem, 9vw, 8rem) 0 clamp(2.5rem, 5vw, 4rem);
+  text-align: center;
+  isolation: isolate;
+  overflow: hidden;
+}
+.ls-hero::before {
+  content: "";
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(circle at 50% 30%, rgba(255,122,61,0.18), transparent 55%),
+    radial-gradient(circle at 30% 80%, rgba(201,198,228,0.16), transparent 55%),
+    radial-gradient(circle at 75% 70%, rgba(122,77,223,0.16), transparent 55%),
+    radial-gradient(circle at 50% 50%, rgba(217,164,65,0.10), transparent 60%);
+  z-index: -1;
+}
+.ls-hero .deva {
+  font-family: var(--ff-deva);
+  font-size: clamp(1.3rem, 2.8vw, 2rem);
+  color: var(--gold-trishul);
+  letter-spacing: 0.04em;
+  margin-bottom: 0.6rem;
+}
+.ls-hero h1 {
+  font-family: var(--ff-display);
+  font-size: clamp(2.6rem, 7vw, 5rem);
+  line-height: 1.05;
+  font-weight: 500;
+  margin: 0 0 1rem;
+}
+.ls-hero p {
+  max-width: 56rem;
+  margin: 0 auto;
+  font-family: var(--ff-display);
+  font-size: clamp(1.05rem, 1.4vw, 1.25rem);
+  color: var(--silver-trishul);
+  line-height: 1.7;
+}
+.ls-hero .divider {
+  margin: 2rem auto 0;
+  color: var(--gold-trishul);
+  letter-spacing: 0.6em;
+  font-size: 0.85rem;
+}
+
+/* ---------- CHAPTER LIST (TIMELINE) ---------- */
+.ls-timeline {
+  position: relative;
+  max-width: 64rem;
+  margin: clamp(2.5rem, 5vw, 4rem) auto;
+  padding: 1rem 0;
+}
+.ls-timeline::before {
+  content: "";
+  position: absolute;
+  top: 0; bottom: 0;
+  left: 50%;
+  width: 2px;
+  background:
+    linear-gradient(180deg,
+      transparent 0%,
+      rgba(217,164,65,0.45) 6%,
+      rgba(217,164,65,0.45) 94%,
+      transparent 100%);
+  transform: translateX(-50%);
+  z-index: 0;
+}
+@media (max-width: 800px) {
+  .ls-timeline::before { left: 22px; }
+}
+
+/* ---------- A SINGLE CHAPTER ---------- */
+.ls-ch {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  align-items: start;
+  margin: clamp(1.5rem, 3vw, 2.5rem) 0;
+}
+@media (max-width: 800px) {
+  .ls-ch { grid-template-columns: 1fr; padding-left: 60px; gap: 0; }
+}
+
+/* Dot on the spine */
+.ls-ch::before {
+  content: "";
+  position: absolute;
+  top: 1.2rem;
+  left: 50%;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--ink-night);
+  border: 2px solid var(--gold-trishul);
+  box-shadow: 0 0 14px rgba(217,164,65,0.5);
+  transform: translateX(-50%);
+  z-index: 2;
+}
+@media (max-width: 800px) {
+  .ls-ch::before { left: 22px; }
+}
+
+/* Number that floats over the dot for desktop */
+.ls-ch__num {
+  position: absolute;
+  top: 1.5rem;
+  left: 50%;
+  transform: translate(-50%, -150%);
+  font-family: var(--ff-caps);
+  letter-spacing: 0.32em;
+  color: var(--gold-trishul);
+  font-size: 0.72rem;
+  background: var(--ink-night);
+  padding: 0.15rem 0.6rem;
+  border-radius: 999px;
+  border: 1px solid rgba(217,164,65,0.35);
+  z-index: 3;
+}
+@media (max-width: 800px) {
+  .ls-ch__num { left: 22px; transform: translate(-50%, -100%); }
+}
+
+/* Card body */
+.ls-ch__card {
+  position: relative;
+  padding: 1.8rem 1.7rem 1.9rem;
+  border-radius: 20px;
+  border: 1px solid rgba(217,164,65,0.22);
+  background:
+    linear-gradient(180deg, rgba(244,236,216,0.04), rgba(244,236,216,0.012));
+  overflow: hidden;
+  isolation: isolate;
+  transition: transform 0.35s ease, border-color 0.35s ease;
+}
+.ls-ch__card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(217,164,65,0.5);
+}
+.ls-ch__card::before {
+  content: "";
+  position: absolute; inset: -40%;
+  z-index: -1;
+  filter: blur(36px);
+  opacity: 0.6;
+  background: conic-gradient(from 220deg,
+    rgba(255,122,61,0.0),
+    rgba(255,122,61,0.16),
+    rgba(122,77,223,0.18),
+    rgba(217,164,65,0.16),
+    rgba(255,122,61,0.0));
+  transition: transform 1s ease;
+}
+.ls-ch__card:hover::before { transform: rotate(10deg); }
+
+/* Alternate sides — odd chapters on right, even on left */
+.ls-ch:nth-child(odd)  .ls-ch__card { grid-column: 2; }
+.ls-ch:nth-child(odd)  .ls-ch__aside { grid-column: 1; text-align: right; padding-right: 0.5rem; }
+.ls-ch:nth-child(even) .ls-ch__card { grid-column: 1; }
+.ls-ch:nth-child(even) .ls-ch__aside { grid-column: 2; padding-left: 0.5rem; }
+
+@media (max-width: 800px) {
+  .ls-ch__card, .ls-ch__aside { grid-column: 1 !important; text-align: left !important; padding: 0 !important; }
+  .ls-ch__aside { margin-bottom: 1rem; }
+}
+
+/* The aside (the eyebrow / deva mantra opposite the card) */
+.ls-ch__aside {
+  align-self: center;
+}
+.ls-ch__aside .era {
+  font-family: var(--ff-caps);
+  letter-spacing: 0.32em;
+  font-size: 0.74rem;
+  color: var(--gold-trishul);
+  display: block;
+  margin-bottom: 0.4rem;
+}
+.ls-ch__aside .deva {
+  font-family: var(--ff-deva);
+  font-size: 1.5rem;
+  color: var(--ash-vibhuti);
+  line-height: 1.4;
+  margin: 0 0 0.4rem;
+}
+.ls-ch__aside .gloss {
+  font-family: var(--ff-display);
+  font-style: italic;
+  color: var(--silver-trishul);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Card content */
+.ls-ch__title {
+  font-family: var(--ff-display);
+  font-size: clamp(1.65rem, 2.6vw, 2.1rem);
+  color: var(--ash-vibhuti);
+  font-weight: 500;
+  margin: 0 0 0.2rem;
+  line-height: 1.15;
+}
+.ls-ch__subtitle {
+  font-family: var(--ff-caps);
+  letter-spacing: 0.24em;
+  font-size: 0.75rem;
+  color: var(--gold-trishul);
+  margin: 0 0 1rem;
+}
+.ls-ch__body {
+  font-family: var(--ff-display);
+  font-size: 1.02rem;
+  line-height: 1.7;
+  color: var(--ash-vibhuti);
+  margin: 0 0 1.2rem;
+}
+.ls-ch__body p { margin: 0 0 0.8rem; }
+.ls-ch__body p:last-child { margin-bottom: 0; }
+.ls-ch__body em { color: var(--gold-trishul); font-style: italic; }
+.ls-ch__body strong { color: var(--ash-vibhuti); font-weight: 600; }
+
+/* Quote-pull */
+.ls-pull {
+  margin: 1rem 0 1.2rem;
+  padding: 0.9rem 1.1rem;
+  border-left: 3px solid var(--gold-trishul);
+  background: rgba(217,164,65,0.06);
+  border-radius: 0 10px 10px 0;
+}
+.ls-pull p {
+  margin: 0;
+  font-family: var(--ff-display);
+  font-style: italic;
+  color: var(--ash-vibhuti);
+  font-size: 1rem;
+  line-height: 1.55;
+}
+.ls-pull cite {
+  display: block;
+  font-style: normal;
+  font-family: var(--ff-caps);
+  letter-spacing: 0.22em;
+  font-size: 0.65rem;
+  color: var(--gold-trishul);
+  margin-top: 0.4rem;
+}
+
+/* Bottom chips strip on each chapter */
+.ls-ch__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+.ls-ch__tags .chip { font-size: 0.7rem; }
+
+/* Per-chapter mood tints */
+.ls-ch--sati      .ls-ch__card { border-color: rgba(201,198,228,0.30); }
+.ls-ch--yajna     .ls-ch__card { border-color: rgba(200,17,59,0.30); }
+.ls-ch--himavat   .ls-ch__card { border-color: rgba(95,227,192,0.25); }
+.ls-ch--tapas     .ls-ch__card { border-color: rgba(217,164,65,0.45); }
+.ls-ch--test      .ls-ch__card { border-color: rgba(122,77,223,0.30); }
+.ls-ch--wedding   .ls-ch__card { border-color: rgba(255,122,61,0.32); }
+.ls-ch--kailasa   .ls-ch__card { border-color: rgba(43,182,255,0.28); }
+
+
+/* ---------- CLOSING TEACHING ---------- */
+.ls-teaching {
+  margin: clamp(2rem, 4vw, 3.5rem) 0;
+  padding: clamp(2rem, 4vw, 2.8rem);
+  border-radius: 22px;
+  border: 1px solid rgba(217,164,65,0.24);
+  background:
+    radial-gradient(circle at 30% 30%, rgba(255,122,61,0.10), transparent 55%),
+    radial-gradient(circle at 75% 70%, rgba(201,198,228,0.10), transparent 55%),
+    linear-gradient(180deg, rgba(244,236,216,0.04), rgba(244,236,216,0.012));
+  text-align: center;
+}
+.ls-teaching .deva-sm {
+  font-family: var(--ff-deva);
+  color: var(--gold-trishul);
+  font-size: 1.05rem;
+  margin: 0 0 0.5rem;
+}
+.ls-teaching h2 {
+  font-family: var(--ff-display);
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  color: var(--ash-vibhuti);
+  font-weight: 500;
+  margin: 0 0 0.6rem;
+}
+.ls-teaching p {
+  font-family: var(--ff-display);
+  color: var(--silver-trishul);
+  font-size: 1.05rem;
+  line-height: 1.65;
+  max-width: 52rem;
+  margin: 0 auto 0.6rem;
+}
