@@ -1,0 +1,179 @@
+/* ===========================================================
+   AVATARS PAGE — assets/css/pages/avatars.css
+   Reuses .ccard, .codex-grid, .filterbar from pages/characters.css
+   Adds: hero, insight panel, four new tier color variants
+   =========================================================== */
+
+/* ---------- HERO ---------- */
+.avatar-hero {
+  position: relative;
+  padding: clamp(4rem, 9vw, 8rem) 0 clamp(2.5rem, 5vw, 4rem);
+  text-align: center;
+  isolation: isolate;
+  overflow: hidden;
+}
+.avatar-hero::before {
+  content: "";
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(217,164,65,0.18), transparent 55%),
+    radial-gradient(circle at 18% 80%, rgba(122,77,223,0.22), transparent 45%),
+    radial-gradient(circle at 82% 70%, rgba(255,122,61,0.18), transparent 50%);
+  z-index: -1;
+}
+.avatar-hero .deva {
+  font-family: var(--ff-deva);
+  font-size: clamp(1.4rem, 3vw, 2.1rem);
+  color: var(--gold-trishul);
+  letter-spacing: 0.04em;
+  margin-bottom: 0.65rem;
+}
+.avatar-hero h1 {
+  font-family: var(--ff-display);
+  font-size: clamp(2.6rem, 7vw, 5rem);
+  line-height: 1.05;
+  font-weight: 500;
+  margin: 0 0 1rem;
+}
+.avatar-hero p {
+  max-width: 56rem;
+  margin: 0 auto;
+  font-family: var(--ff-display);
+  font-size: clamp(1.05rem, 1.4vw, 1.25rem);
+  color: var(--silver-trishul);
+  line-height: 1.65;
+}
+.avatar-hero .divider {
+  margin: 2.2rem auto 0;
+  color: var(--gold-trishul);
+  letter-spacing: 0.6em;
+  font-size: 0.85rem;
+}
+
+/* ---------- INSIGHT PANEL — "Why does Śiva descend?" ---------- */
+.why-avatars {
+  margin: clamp(2rem, 5vw, 4rem) 0;
+}
+.why-avatars__grid {
+  display: grid;
+  gap: clamp(1rem, 2vw, 1.6rem);
+  grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+}
+.why-avatars__card {
+  position: relative;
+  padding: 1.6rem 1.5rem 1.7rem;
+  border-radius: 18px;
+  background:
+    linear-gradient(180deg, rgba(244,236,216,0.04), rgba(244,236,216,0.015));
+  border: 1px solid rgba(217,164,65,0.22);
+  overflow: hidden;
+  isolation: isolate;
+}
+.why-avatars__card::before {
+  content: "";
+  position: absolute; inset: -50%;
+  background: conic-gradient(from 220deg,
+    rgba(217,164,65,0.0),
+    rgba(217,164,65,0.10),
+    rgba(122,77,223,0.10),
+    rgba(43,182,255,0.06),
+    rgba(217,164,65,0.0));
+  filter: blur(30px);
+  z-index: -1;
+  opacity: 0.7;
+}
+.why-avatars__card h3 {
+  font-family: var(--ff-display);
+  font-size: 1.55rem;
+  color: var(--ash-vibhuti);
+  margin: 0 0 0.7rem;
+  font-weight: 500;
+}
+.why-avatars__card .deva-sm {
+  font-family: var(--ff-deva);
+  color: var(--gold-trishul);
+  font-size: 1rem;
+  margin: 0 0 0.5rem;
+  letter-spacing: 0.04em;
+}
+.why-avatars__card p {
+  font-family: var(--ff-display);
+  color: var(--silver-trishul);
+  line-height: 1.55;
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* ---------- NEW TIER COLOR VARIANTS for .ccard ---------- */
+
+/* WARRIOR — fierce, fire/kali tones */
+.ccard--warrior {
+  border-color: rgba(255,122,61,0.32);
+  background:
+    linear-gradient(180deg, rgba(255,122,61,0.05), rgba(200,17,59,0.03)),
+    linear-gradient(180deg, rgba(244,236,216,0.025), rgba(244,236,216,0.01));
+}
+.ccard--warrior::before {
+  background: conic-gradient(from 200deg,
+    rgba(255,122,61,0.0),
+    rgba(255,122,61,0.22),
+    rgba(200,17,59,0.18),
+    rgba(217,164,65,0.10),
+    rgba(255,122,61,0.0));
+}
+.ccard--warrior .ccard__tier { color: var(--sacred-fire); }
+.ccard--warrior .ccard__num   { color: var(--blood-kali); }
+
+/* SERVICE — devotional gold + blue tones */
+.ccard--service {
+  border-color: rgba(217,164,65,0.32);
+  background:
+    linear-gradient(180deg, rgba(217,164,65,0.05), rgba(43,182,255,0.03)),
+    linear-gradient(180deg, rgba(244,236,216,0.025), rgba(244,236,216,0.01));
+}
+.ccard--service::before {
+  background: conic-gradient(from 160deg,
+    rgba(217,164,65,0.0),
+    rgba(217,164,65,0.22),
+    rgba(43,182,255,0.20),
+    rgba(95,227,192,0.10),
+    rgba(217,164,65,0.0));
+}
+.ccard--service .ccard__tier { color: var(--cosmic-blue); }
+.ccard--service .ccard__num   { color: var(--gold-trishul); }
+
+/* HOUSEHOLD — warm earth, householder/grihastha */
+.ccard--household {
+  border-color: rgba(217,164,65,0.24);
+  background:
+    linear-gradient(180deg, rgba(217,164,65,0.04), rgba(255,122,61,0.02)),
+    linear-gradient(180deg, rgba(244,236,216,0.025), rgba(244,236,216,0.01));
+}
+.ccard--household::before {
+  background: conic-gradient(from 60deg,
+    rgba(217,164,65,0.0),
+    rgba(217,164,65,0.20),
+    rgba(255,122,61,0.14),
+    rgba(95,227,192,0.06),
+    rgba(217,164,65,0.0));
+}
+.ccard--household .ccard__tier { color: var(--gold-trishul); }
+.ccard--household .ccard__num   { color: var(--sacred-fire); }
+
+/* FORM — special pure form (Vṛṣabha etc.) — silver + cosmic */
+.ccard--form {
+  border-color: rgba(201,198,228,0.32);
+  background:
+    linear-gradient(180deg, rgba(201,198,228,0.05), rgba(122,77,223,0.03)),
+    linear-gradient(180deg, rgba(244,236,216,0.025), rgba(244,236,216,0.01));
+}
+.ccard--form::before {
+  background: conic-gradient(from 320deg,
+    rgba(201,198,228,0.0),
+    rgba(201,198,228,0.22),
+    rgba(122,77,223,0.20),
+    rgba(217,164,65,0.10),
+    rgba(201,198,228,0.0));
+}
+.ccard--form .ccard__tier { color: var(--silver-trishul); }
+.ccard--form .ccard__num   { color: var(--cosmic-violet); }
