@@ -1,0 +1,356 @@
+/* ===========================================================
+   SHAKTI PEETHAS — assets/css/pages/shakti-peethas.css
+   The 18 Aṣṭādaśa Śakti Peeṭhas of Ādi Śaṅkara
+   =========================================================== */
+
+/* ---------- HERO ---------- */
+.sp-hero {
+  position: relative;
+  padding: clamp(4rem, 9vw, 8rem) 0 clamp(2.5rem, 5vw, 4rem);
+  text-align: center;
+  isolation: isolate;
+  overflow: hidden;
+}
+.sp-hero::before {
+  content: "";
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(circle at 50% 30%, rgba(200,17,59,0.16), transparent 55%),
+    radial-gradient(circle at 25% 75%, rgba(217,164,65,0.14), transparent 55%),
+    radial-gradient(circle at 75% 70%, rgba(122,77,223,0.14), transparent 55%);
+  z-index: -1;
+}
+.sp-hero .deva {
+  font-family: var(--ff-deva);
+  color: var(--gold-trishul);
+  font-size: clamp(1.3rem, 2.6vw, 1.9rem);
+  margin-bottom: 0.6rem;
+  text-shadow: 0 0 18px rgba(217,164,65,0.40);
+}
+.sp-hero h1 {
+  font-family: var(--ff-display);
+  font-size: clamp(2.6rem, 7vw, 5rem);
+  line-height: 1.05;
+  font-weight: 500;
+  margin: 0 0 1rem;
+}
+.sp-hero p {
+  max-width: 56rem;
+  margin: 0 auto;
+  font-family: var(--ff-display);
+  font-size: clamp(1.05rem, 1.4vw, 1.25rem);
+  color: var(--silver-trishul);
+  line-height: 1.7;
+}
+.sp-hero .divider {
+  margin: 2rem auto 0;
+  color: var(--gold-trishul);
+  letter-spacing: 0.6em;
+  font-size: 0.85rem;
+}
+
+
+/* ---------- ORIGIN PANEL ---------- */
+.sp-origin {
+  margin: clamp(2rem, 4vw, 3.5rem) 0;
+  padding: clamp(2rem, 4vw, 2.8rem);
+  border-radius: 22px;
+  border: 1px solid rgba(200,17,59,0.32);
+  background:
+    radial-gradient(circle at 30% 30%, rgba(200,17,59,0.10), transparent 55%),
+    radial-gradient(circle at 75% 70%, rgba(217,164,65,0.10), transparent 55%),
+    linear-gradient(180deg, rgba(244,236,216,0.04), rgba(244,236,216,0.012));
+}
+.sp-origin .deva-sm {
+  font-family: var(--ff-deva);
+  color: var(--gold-trishul);
+  font-size: 1.05rem;
+  margin: 0 0 0.5rem;
+  text-align: center;
+}
+.sp-origin h2 {
+  font-family: var(--ff-display);
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  color: var(--ash-vibhuti);
+  font-weight: 500;
+  margin: 0 0 1rem;
+  text-align: center;
+}
+.sp-origin p {
+  font-family: var(--ff-display);
+  color: var(--ash-vibhuti);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  max-width: 56rem;
+  margin: 0 auto 0.9rem;
+}
+.sp-origin em { color: var(--gold-trishul); font-style: italic; }
+.sp-origin strong { color: var(--ash-vibhuti); }
+
+
+/* ---------- THE STOTRA BLOCK ---------- */
+.sp-stotra {
+  margin: clamp(2rem, 4vw, 3rem) 0;
+  padding: clamp(1.6rem, 3vw, 2.4rem);
+  border-radius: 18px;
+  border: 1px solid rgba(217,164,65,0.32);
+  background: linear-gradient(180deg, rgba(217,164,65,0.06), rgba(244,236,216,0.012));
+  text-align: center;
+}
+.sp-stotra .deva-sm {
+  color: var(--gold-trishul);
+  font-family: var(--ff-deva);
+  font-size: 1.0rem;
+  margin-bottom: 0.7rem;
+}
+.sp-stotra blockquote {
+  font-family: var(--ff-deva);
+  color: var(--ash-vibhuti);
+  font-size: clamp(1.0rem, 1.6vw, 1.25rem);
+  line-height: 1.8;
+  margin: 0 auto 0.8rem;
+  max-width: 52rem;
+}
+.sp-stotra cite {
+  display: block;
+  color: var(--silver-trishul);
+  font-family: var(--ff-display);
+  font-style: italic;
+  font-size: 0.9rem;
+}
+
+
+/* ---------- SECTION HEAD ---------- */
+.sp-head {
+  text-align: center;
+  margin: clamp(2.5rem, 5vw, 4rem) 0 clamp(1rem, 2vw, 1.6rem);
+}
+.sp-head .deva-sm {
+  font-family: var(--ff-deva);
+  color: var(--gold-trishul);
+  font-size: 1.05rem;
+  margin: 0 0 0.4rem;
+}
+.sp-head h2 {
+  font-family: var(--ff-display);
+  font-size: clamp(2rem, 3.4vw, 2.8rem);
+  font-weight: 500;
+  color: var(--ash-vibhuti);
+  margin: 0 0 0.6rem;
+  line-height: 1.1;
+}
+.sp-head p {
+  max-width: 52rem;
+  margin: 0 auto;
+  font-family: var(--ff-display);
+  color: var(--silver-trishul);
+  font-size: 1.05rem;
+  line-height: 1.65;
+}
+
+
+/* ---------- INDEX RIBBON ---------- */
+.sp-index {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.45rem;
+  margin: 1.5rem auto 2.5rem;
+  max-width: 78rem;
+}
+.sp-index a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.85rem;
+  border-radius: 999px;
+  border: 1px solid rgba(244,236,216,0.18);
+  background: rgba(14,8,32,0.50);
+  color: var(--silver-trishul);
+  font-family: var(--ff-caps);
+  font-size: 0.66rem;
+  letter-spacing: 0.18em;
+  text-decoration: none;
+  transition: border-color 0.25s ease, color 0.25s ease, background 0.25s ease;
+}
+.sp-index a:hover {
+  border-color: var(--gold-trishul);
+  color: var(--gold-trishul);
+  background: rgba(217,164,65,0.08);
+}
+.sp-index a::before {
+  content: "";
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--gold-trishul);
+  opacity: 0.7;
+}
+
+
+/* ---------- THE 18 PEETHAS GRID ---------- */
+.sp-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr));
+  gap: 1.25rem;
+  margin: 1rem 0 clamp(3rem, 5vw, 4rem);
+}
+
+
+/* ---------- PEETHA CARD ---------- */
+.spcard {
+  position: relative;
+  padding: 1.6rem 1.4rem 1.4rem;
+  border-radius: 20px;
+  border: 1px solid rgba(244,236,216,0.20);
+  background:
+    linear-gradient(180deg, rgba(244,236,216,0.04), rgba(244,236,216,0.012));
+  isolation: isolate;
+  overflow: hidden;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+.spcard:hover {
+  transform: translateY(-3px);
+  border-color: var(--gold-trishul);
+}
+/* holographic foil */
+.spcard::before {
+  content: "";
+  position: absolute; inset: -40%;
+  background: conic-gradient(from 0deg,
+    rgba(244,236,216,0.0),
+    rgba(244,236,216,0.18),
+    rgba(244,236,216,0.0));
+  filter: blur(40px);
+  opacity: 0.55;
+  z-index: -1;
+  transition: transform 1s ease;
+}
+.spcard:hover::before { transform: rotate(15deg); }
+
+.spcard__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.55rem;
+  gap: 0.6rem;
+}
+.spcard__num {
+  font-family: var(--ff-caps);
+  font-size: 0.66rem;
+  letter-spacing: 0.28em;
+  color: var(--gold-trishul);
+}
+.spcard__deva {
+  font-family: var(--ff-deva);
+  color: var(--ash-vibhuti);
+  font-size: 1.05rem;
+  margin: 0;
+  text-align: right;
+}
+.spcard__name {
+  font-family: var(--ff-display);
+  font-size: 1.55rem;
+  font-weight: 500;
+  color: var(--ash-vibhuti);
+  margin: 0 0 0.15rem;
+  line-height: 1.15;
+}
+.spcard__place {
+  font-family: var(--ff-display);
+  font-style: italic;
+  color: var(--silver-trishul);
+  font-size: 0.95rem;
+  margin: 0 0 0.85rem;
+}
+
+.spcard__body {
+  font-family: var(--ff-display);
+  color: var(--ash-vibhuti);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0 0 1rem;
+}
+.spcard__body strong { color: var(--gold-trishul); font-weight: 500; }
+.spcard__body em { color: var(--silver-trishul); font-style: italic; }
+
+/* meta dl */
+.spcard__meta {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 0.35rem 0.8rem;
+  margin: 0.5rem 0 0.9rem;
+  padding-top: 0.85rem;
+  border-top: 1px dashed rgba(244,236,216,0.18);
+  font-size: 0.82rem;
+}
+.spcard__meta dt {
+  font-family: var(--ff-caps);
+  font-size: 0.62rem;
+  letter-spacing: 0.22em;
+  color: var(--silver-trishul);
+  text-transform: uppercase;
+  align-self: start;
+  padding-top: 0.15rem;
+}
+.spcard__meta dd {
+  font-family: var(--ff-display);
+  color: var(--ash-vibhuti);
+  margin: 0;
+}
+
+/* chips */
+.spcard__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: auto;
+  padding-top: 0.6rem;
+}
+.spcard__tags .chip { font-size: 0.68rem; }
+
+
+/* ---------- REGIONAL BORDER TINTS ---------- */
+.spcard--north   { border-color: rgba(201,198,228,0.34); }  /* silver: Himalaya */
+.spcard--east    { border-color: rgba(43,182,255,0.34); }   /* blue: Bengal/Odisha */
+.spcard--south   { border-color: rgba(95,227,192,0.34); }   /* green: Tamil/Andhra */
+.spcard--west    { border-color: rgba(255,122,61,0.34); }   /* fire: Maharashtra/Gujarat */
+.spcard--central { border-color: rgba(217,164,65,0.42); }   /* gold: Madhya */
+.spcard--outer   { border-color: rgba(122,77,223,0.38); }   /* violet: Lanka, Nepal, PoK */
+
+
+/* ---------- CLOSING TEACHING ---------- */
+.sp-teaching {
+  margin: clamp(2rem, 4vw, 3.5rem) 0;
+  padding: clamp(2rem, 4vw, 2.8rem);
+  border-radius: 22px;
+  border: 1px solid rgba(217,164,65,0.32);
+  background:
+    radial-gradient(circle at 30% 30%, rgba(217,164,65,0.10), transparent 55%),
+    radial-gradient(circle at 75% 70%, rgba(200,17,59,0.10), transparent 55%),
+    linear-gradient(180deg, rgba(244,236,216,0.04), rgba(244,236,216,0.012));
+  text-align: center;
+}
+.sp-teaching .deva-sm {
+  font-family: var(--ff-deva);
+  color: var(--gold-trishul);
+  font-size: 1.05rem;
+  margin: 0 0 0.5rem;
+}
+.sp-teaching h2 {
+  font-family: var(--ff-display);
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  color: var(--ash-vibhuti);
+  font-weight: 500;
+  margin: 0 0 0.6rem;
+}
+.sp-teaching p {
+  font-family: var(--ff-display);
+  color: var(--silver-trishul);
+  font-size: 1.05rem;
+  line-height: 1.65;
+  max-width: 52rem;
+  margin: 0 auto 0.6rem;
+}
+.sp-teaching em { color: var(--gold-trishul); font-style: italic; }

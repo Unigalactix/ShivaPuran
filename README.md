@@ -41,17 +41,17 @@ A devotional, premium static website on **Lord Śiva**, **Pārvatī Mā**, **Kā
 ShivaPuran/
 ├── .nojekyll                       # tell GH Pages to skip Jekyll
 ├── index.html                      # Chapter 1
-├── characters.html … lineage.html  # Chapters 2–12
+├── characters.html … lineage.html  # Chapters 2–13 (incl. shakti-peethas.html)
 ├── README.md
 └── assets/
     ├── css/
     │   ├── reset.css
     │   ├── global.css              # tokens, header/footer, utilities
     │   └── pages/
-    │       ├── index.css           characters.css   avatars.css
-    │       ├── jyotirlingas.css    tandava.css      love-story.css
-    │       ├── stories.css         parvati.css      kali.css
-    │       └── trimurti.css        themes.css       lineage.css
+    │       ├── index.css           characters.css      avatars.css
+    │       ├── jyotirlingas.css    shakti-peethas.css  tandava.css
+    │       ├── love-story.css      stories.css         parvati.css
+    │       └── kali.css            trimurti.css        themes.css   lineage.css
     └── js/
         ├── main.js                 # nav toggle, year, smooth-scroll
         └── characters.js           # pantheon filter logic
