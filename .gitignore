@@ -1,0 +1,17 @@
+# OS / editor noise
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+*.swp
+*~
+
+# Build / dependency junk that should never appear in a static site
+node_modules/
+dist/
+.cache/
+
+# Local env files
+.env
+.env.*
