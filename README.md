@@ -32,6 +32,8 @@ A devotional, premium static website on **Lord Śiva**, **Pārvatī Mā**, **Kā
 ## Design System
 
 - **Visual signature:** glass surfaces (rgba + low-alpha gradients) with a holographic-foil sweep (conic-gradient `::before` rotating on hover), radial cosmic gradients, ornamental `✦ ❀ ✦` dividers, and devanagari mantras at every section head.
+- **Premium navigation:** sticky 72px header with a gold hairline glow, brand triśūla drop-shadow, hairline underline on each link, an `✦` active-link glyph, and a dedicated round-pill **Search** button (`⌘K`).
+- **Search palette:** glass modal overlay with backdrop blur, an in-memory index of ~150 entries spanning every chapter (titles + devanāgarī + snippets + page chip), live `<mark>` highlighting, scored ranking, full keyboard control (`↑ ↓ ↵ / Esc`), and global triggers — `Ctrl/Cmd + K` anywhere, or `/` outside of an input.
 - **Palette tokens** (in `assets/css/global.css`): `--ink-night`, `--ink-deep`, `--ash-vibhuti`, `--gold-trishul`, `--silver-trishul`, `--cosmic-violet`, `--cosmic-blue`, `--sacred-fire`, `--snake-green`, `--blood-kali`.
 - **Typography:** *Cormorant Garamond* (display serif) · *Cinzel* (caps) · *Inter* (UI) · *Noto Serif Devanagari* (Sanskrit).
 - **Shared utilities:** `.shell`, `.section`, `.divider`, `.shloka`, `.chip` (variants: `--fire`, `--gold`, `--violet`, `--blue`, `--green`, `--kali`), `.btn` / `.btn--ghost`, `.gold-text`, `.deva` / `.deva-sm`.
@@ -42,18 +44,22 @@ ShivaPuran/
 ├── .nojekyll                       # tell GH Pages to skip Jekyll
 ├── index.html                      # Chapter 1
 ├── characters.html … lineage.html  # Chapters 2–13 (incl. shakti-peethas.html)
+├── glossary.html                   # Chapter 14 — the Codex Śabdakośa
 ├── README.md
 └── assets/
     ├── css/
     │   ├── reset.css
-    │   ├── global.css              # tokens, header/footer, utilities
+    │   ├── global.css              # tokens, premium header/footer, utilities
+    │   ├── search.css              # ⌘K palette overlay
     │   └── pages/
     │       ├── index.css           characters.css      avatars.css
     │       ├── jyotirlingas.css    shakti-peethas.css  tandava.css
     │       ├── love-story.css      stories.css         parvati.css
-    │       └── kali.css            trimurti.css        themes.css   lineage.css
+    │       ├── kali.css            trimurti.css        themes.css
+    │       └── lineage.css         glossary.css
     └── js/
         ├── main.js                 # nav toggle, year, smooth-scroll
+        ├── search.js               # palette index + scoring + keyboard
         └── characters.js           # pantheon filter logic
 ```
 

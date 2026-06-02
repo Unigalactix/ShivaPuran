@@ -24,6 +24,7 @@
   <!-- Styles -->
   <link rel="stylesheet" href="assets/css/reset.css" />
   <link rel="stylesheet" href="assets/css/global.css" />
+  <link rel="stylesheet" href="assets/css/search.css" />
   <link rel="stylesheet" href="assets/css/pages/characters.css" />
 </head>
 <body>
@@ -62,8 +63,17 @@
           <li><a href="trimurti.html">Trimūrti</a></li>
           <li><a href="themes.html">Themes</a></li>
           <li><a href="lineage.html">Lineage</a></li>
+          <li><a href="glossary.html">Glossary</a></li>
         </ul>
       </nav>
+
+      <button class="search-btn" type="button" data-search-open aria-label="Search the codex" title="Press / or Ctrl+K">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+          <circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/>
+        </svg>
+        <span class="search-btn__label">Search</span>
+        <kbd class="search-btn__key">⌘K</kbd>
+      </button>
     </div>
   </header>
 
@@ -984,6 +994,7 @@
   </footer>
 
   <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/search.js" defer></script>
   <script src="assets/js/characters.js" defer></script>
 </body>
 </html>
