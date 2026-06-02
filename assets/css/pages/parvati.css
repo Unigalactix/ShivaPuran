@@ -1,0 +1,375 @@
+/* ===========================================================
+   PARVATI PAGE — assets/css/pages/parvati.css
+   Ādiśakti hero · Navadurgā 9-grid · special forms · teachings
+   =========================================================== */
+
+/* ---------- HERO ---------- */
+.pv-hero {
+  position: relative;
+  padding: clamp(4rem, 9vw, 8rem) 0 clamp(2.5rem, 5vw, 4rem);
+  text-align: center;
+  isolation: isolate;
+  overflow: hidden;
+}
+.pv-hero::before {
+  content: "";
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(circle at 50% 25%, rgba(217,164,65,0.20), transparent 55%),
+    radial-gradient(circle at 25% 75%, rgba(200,17,59,0.14), transparent 55%),
+    radial-gradient(circle at 75% 70%, rgba(122,77,223,0.16), transparent 55%);
+  z-index: -1;
+}
+.pv-hero .deva {
+  font-family: var(--ff-deva);
+  color: var(--gold-trishul);
+  font-size: clamp(1.3rem, 2.6vw, 1.9rem);
+  margin-bottom: 0.6rem;
+}
+.pv-hero h1 {
+  font-family: var(--ff-display);
+  font-size: clamp(2.6rem, 7vw, 5rem);
+  line-height: 1.05;
+  font-weight: 500;
+  margin: 0 0 1rem;
+}
+.pv-hero p {
+  max-width: 56rem;
+  margin: 0 auto;
+  font-family: var(--ff-display);
+  font-size: clamp(1.05rem, 1.4vw, 1.25rem);
+  color: var(--silver-trishul);
+  line-height: 1.7;
+}
+.pv-hero .divider {
+  margin: 2rem auto 0;
+  color: var(--gold-trishul);
+  letter-spacing: 0.6em;
+  font-size: 0.85rem;
+}
+
+
+/* ---------- ĀDIŚAKTI INTRODUCTION ---------- */
+.pv-adi {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 2rem;
+  align-items: center;
+  margin: clamp(2rem, 4vw, 3.5rem) 0;
+  padding: clamp(1.8rem, 3vw, 2.5rem);
+  border-radius: 22px;
+  border: 1px solid rgba(217,164,65,0.30);
+  background:
+    radial-gradient(circle at 70% 70%, rgba(217,164,65,0.10), transparent 60%),
+    linear-gradient(180deg, rgba(244,236,216,0.05), rgba(244,236,216,0.012));
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+.pv-adi::before {
+  content: "";
+  position: absolute; inset: -40%;
+  background: conic-gradient(from 0deg,
+    rgba(217,164,65,0.0),
+    rgba(217,164,65,0.16),
+    rgba(122,77,223,0.16),
+    rgba(255,122,61,0.10),
+    rgba(217,164,65,0.0));
+  filter: blur(40px);
+  z-index: -1;
+  opacity: 0.6;
+}
+@media (max-width: 800px) { .pv-adi { grid-template-columns: 1fr; } }
+
+.pv-adi__yantra {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pv-adi__yantra svg {
+  width: 100%;
+  max-width: 280px;
+  height: auto;
+  color: var(--gold-trishul);
+  filter: drop-shadow(0 0 20px rgba(217,164,65,0.4));
+  animation: pv-spin 80s linear infinite;
+}
+@keyframes pv-spin {
+  to { transform: rotate(360deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pv-adi__yantra svg { animation: none; }
+}
+
+.pv-adi__body p.deva-sm {
+  font-family: var(--ff-deva);
+  color: var(--gold-trishul);
+  font-size: 1.05rem;
+  margin: 0 0 0.4rem;
+}
+.pv-adi__body h2 {
+  font-family: var(--ff-display);
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 500;
+  color: var(--ash-vibhuti);
+  margin: 0 0 0.8rem;
+  line-height: 1.15;
+}
+.pv-adi__body p {
+  font-family: var(--ff-display);
+  color: var(--ash-vibhuti);
+  font-size: 1.02rem;
+  line-height: 1.7;
+  margin: 0 0 0.8rem;
+}
+.pv-adi__body em { color: var(--gold-trishul); font-style: italic; }
+
+
+/* ---------- SECTION HEAD ---------- */
+.pv-head {
+  text-align: center;
+  margin: clamp(2.5rem, 5vw, 4rem) 0 clamp(1rem, 2vw, 1.6rem);
+}
+.pv-head .deva-sm {
+  font-family: var(--ff-deva);
+  color: var(--gold-trishul);
+  font-size: 1.05rem;
+  margin: 0 0 0.4rem;
+}
+.pv-head h2 {
+  font-family: var(--ff-display);
+  font-size: clamp(2rem, 3.4vw, 2.8rem);
+  font-weight: 500;
+  color: var(--ash-vibhuti);
+  margin: 0 0 0.6rem;
+  line-height: 1.1;
+}
+.pv-head p {
+  max-width: 52rem;
+  margin: 0 auto;
+  font-family: var(--ff-display);
+  color: var(--silver-trishul);
+  font-size: 1.05rem;
+  line-height: 1.65;
+}
+
+
+/* ---------- NAVADURGĀ 9-GRID ---------- */
+.pv-nava {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
+  gap: 1.1rem;
+  margin: 1.5rem 0 clamp(3rem, 5vw, 4rem);
+}
+
+.pv-day {
+  position: relative;
+  padding: 1.4rem 1.2rem 1.5rem;
+  border-radius: 18px;
+  border: 1px solid rgba(217,164,65,0.24);
+  background: linear-gradient(180deg, rgba(244,236,216,0.04), rgba(244,236,216,0.012));
+  text-align: center;
+  isolation: isolate;
+  overflow: hidden;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+.pv-day:hover {
+  transform: translateY(-3px);
+  border-color: var(--gold-trishul);
+}
+.pv-day::before {
+  content: "";
+  position: absolute; inset: -40%;
+  background: conic-gradient(from 180deg,
+    rgba(217,164,65,0.0),
+    rgba(217,164,65,0.16),
+    rgba(200,17,59,0.12),
+    rgba(122,77,223,0.14),
+    rgba(217,164,65,0.0));
+  filter: blur(36px);
+  opacity: 0.5;
+  z-index: -1;
+  transition: transform 1s ease;
+}
+.pv-day:hover::before { transform: rotate(10deg); }
+
+.pv-day__num {
+  display: inline-block;
+  font-family: var(--ff-caps);
+  letter-spacing: 0.24em;
+  font-size: 0.7rem;
+  color: var(--gold-trishul);
+  padding: 0.2rem 0.7rem;
+  border: 1px solid rgba(217,164,65,0.32);
+  border-radius: 999px;
+  margin-bottom: 0.6rem;
+}
+.pv-day__deva {
+  font-family: var(--ff-deva);
+  font-size: 1.5rem;
+  color: var(--ash-vibhuti);
+  line-height: 1.2;
+  margin: 0 0 0.2rem;
+}
+.pv-day__name {
+  font-family: var(--ff-display);
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--ash-vibhuti);
+  margin: 0 0 0.3rem;
+}
+.pv-day__epithet {
+  font-family: var(--ff-caps);
+  letter-spacing: 0.22em;
+  font-size: 0.66rem;
+  color: var(--gold-trishul);
+  margin: 0 0 0.7rem;
+}
+.pv-day__body {
+  font-family: var(--ff-display);
+  color: var(--silver-trishul);
+  font-size: 0.92rem;
+  line-height: 1.55;
+  margin: 0 0 0.7rem;
+}
+.pv-day__meta {
+  font-family: var(--ff-ui);
+  font-size: 0.72rem;
+  color: var(--silver-trishul);
+  opacity: 0.85;
+  border-top: 1px dashed rgba(217,164,65,0.20);
+  padding-top: 0.5rem;
+  display: grid;
+  gap: 0.2rem;
+}
+.pv-day__meta strong {
+  color: var(--gold-trishul);
+  font-family: var(--ff-caps);
+  letter-spacing: 0.16em;
+  font-size: 0.62rem;
+}
+
+/* Per-day mood tints */
+.pv-day--1 { border-color: rgba(244,236,216,0.32); }
+.pv-day--2 { border-color: rgba(255,122,61,0.30); }
+.pv-day--3 { border-color: rgba(201,198,228,0.32); }
+.pv-day--4 { border-color: rgba(217,164,65,0.40); }
+.pv-day--5 { border-color: rgba(95,227,192,0.28); }
+.pv-day--6 { border-color: rgba(255,122,61,0.34); }
+.pv-day--7 { border-color: rgba(200,17,59,0.34); }
+.pv-day--8 { border-color: rgba(244,236,216,0.44); }
+.pv-day--9 { border-color: rgba(122,77,223,0.34); }
+
+
+/* ---------- SPECIAL FORMS ---------- */
+.pv-forms {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
+  gap: 1.3rem;
+  margin: 1.5rem 0 clamp(3rem, 5vw, 4rem);
+}
+.pv-form {
+  position: relative;
+  padding: 1.8rem 1.6rem;
+  border-radius: 20px;
+  border: 1px solid rgba(217,164,65,0.24);
+  background: linear-gradient(180deg, rgba(244,236,216,0.05), rgba(244,236,216,0.012));
+  isolation: isolate;
+  overflow: hidden;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+.pv-form:hover { transform: translateY(-3px); border-color: rgba(217,164,65,0.55); }
+.pv-form::before {
+  content: "";
+  position: absolute; inset: -40%;
+  background: conic-gradient(from 220deg,
+    rgba(217,164,65,0.0),
+    rgba(217,164,65,0.18),
+    rgba(255,122,61,0.14),
+    rgba(122,77,223,0.16),
+    rgba(217,164,65,0.0));
+  filter: blur(40px);
+  opacity: 0.55;
+  z-index: -1;
+  transition: transform 1s ease;
+}
+.pv-form:hover::before { transform: rotate(12deg); }
+
+.pv-form__head {
+  display: flex;
+  align-items: baseline;
+  gap: 0.8rem;
+  border-bottom: 1px dashed rgba(217,164,65,0.22);
+  padding-bottom: 0.7rem;
+  margin-bottom: 0.9rem;
+}
+.pv-form__deva {
+  font-family: var(--ff-deva);
+  font-size: 1.15rem;
+  color: var(--gold-trishul);
+  margin-left: auto;
+}
+.pv-form__name {
+  font-family: var(--ff-display);
+  font-size: 1.55rem;
+  font-weight: 500;
+  color: var(--ash-vibhuti);
+  margin: 0;
+  line-height: 1.15;
+}
+.pv-form__epithet {
+  font-family: var(--ff-caps);
+  letter-spacing: 0.22em;
+  font-size: 0.7rem;
+  color: var(--gold-trishul);
+  margin: 0 0 0.8rem;
+}
+.pv-form__body {
+  font-family: var(--ff-display);
+  color: var(--ash-vibhuti);
+  font-size: 1rem;
+  line-height: 1.65;
+  margin: 0 0 1rem;
+}
+.pv-form__body em { color: var(--gold-trishul); font-style: italic; }
+.pv-form__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+.pv-form__tags .chip { font-size: 0.7rem; }
+
+
+/* ---------- CLOSING TEACHING ---------- */
+.pv-teaching {
+  margin: clamp(2rem, 4vw, 3.5rem) 0;
+  padding: clamp(2rem, 4vw, 2.8rem);
+  border-radius: 22px;
+  border: 1px solid rgba(217,164,65,0.24);
+  background:
+    radial-gradient(circle at 30% 30%, rgba(217,164,65,0.10), transparent 55%),
+    radial-gradient(circle at 75% 70%, rgba(200,17,59,0.10), transparent 55%),
+    linear-gradient(180deg, rgba(244,236,216,0.04), rgba(244,236,216,0.012));
+  text-align: center;
+}
+.pv-teaching .deva-sm {
+  font-family: var(--ff-deva);
+  color: var(--gold-trishul);
+  font-size: 1.05rem;
+  margin: 0 0 0.5rem;
+}
+.pv-teaching h2 {
+  font-family: var(--ff-display);
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  color: var(--ash-vibhuti);
+  font-weight: 500;
+  margin: 0 0 0.6rem;
+}
+.pv-teaching p {
+  font-family: var(--ff-display);
+  color: var(--silver-trishul);
+  font-size: 1.05rem;
+  line-height: 1.65;
+  max-width: 52rem;
+  margin: 0 auto 0.6rem;
+}

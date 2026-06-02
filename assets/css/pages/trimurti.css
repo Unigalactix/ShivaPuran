@@ -1,0 +1,349 @@
+/* ===========================================================
+   TRIMŪRTI PAGE — assets/css/pages/trimurti.css
+   Three pillars · gold-blue-violet · cosmic interplay
+   =========================================================== */
+
+/* ---------- HERO ---------- */
+.tm-hero {
+  position: relative;
+  padding: clamp(4rem, 9vw, 8rem) 0 clamp(2.5rem, 5vw, 4rem);
+  text-align: center;
+  isolation: isolate;
+  overflow: hidden;
+}
+.tm-hero::before {
+  content: "";
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(circle at 18% 30%, rgba(217,164,65,0.18), transparent 55%),
+    radial-gradient(circle at 50% 70%, rgba(43,182,255,0.16), transparent 55%),
+    radial-gradient(circle at 82% 30%, rgba(122,77,223,0.20), transparent 55%);
+  z-index: -1;
+}
+.tm-hero .deva {
+  font-family: var(--ff-deva);
+  color: var(--gold-trishul);
+  font-size: clamp(1.3rem, 2.6vw, 1.9rem);
+  margin-bottom: 0.6rem;
+  text-shadow: 0 0 18px rgba(217,164,65,0.45);
+}
+.tm-hero h1 {
+  font-family: var(--ff-display);
+  font-size: clamp(2.6rem, 7vw, 5rem);
+  line-height: 1.05;
+  font-weight: 500;
+  margin: 0 0 1rem;
+}
+.tm-hero p {
+  max-width: 56rem;
+  margin: 0 auto;
+  font-family: var(--ff-display);
+  font-size: clamp(1.05rem, 1.4vw, 1.25rem);
+  color: var(--silver-trishul);
+  line-height: 1.7;
+}
+.tm-hero .divider {
+  margin: 2rem auto 0;
+  color: var(--gold-trishul);
+  letter-spacing: 0.6em;
+  font-size: 0.85rem;
+}
+
+
+/* ---------- ORIGIN PANEL — One Becomes Three ---------- */
+.tm-one {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  text-align: center;
+  margin: clamp(2rem, 4vw, 3.5rem) 0;
+  padding: clamp(1.8rem, 3vw, 2.5rem);
+  border-radius: 22px;
+  border: 1px solid rgba(217,164,65,0.32);
+  background:
+    radial-gradient(circle at 50% 50%, rgba(217,164,65,0.08), transparent 60%),
+    linear-gradient(180deg, rgba(244,236,216,0.04), rgba(244,236,216,0.012));
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+.tm-one::before {
+  content: "";
+  position: absolute; inset: -40%;
+  background: conic-gradient(from 0deg,
+    rgba(217,164,65,0.0),
+    rgba(217,164,65,0.18),
+    rgba(43,182,255,0.16),
+    rgba(122,77,223,0.18),
+    rgba(217,164,65,0.0));
+  filter: blur(50px);
+  z-index: -1;
+  opacity: 0.55;
+}
+.tm-one .deva-sm {
+  font-family: var(--ff-deva);
+  color: var(--gold-trishul);
+  font-size: 1.05rem;
+  margin: 0 0 0.4rem;
+}
+.tm-one h2 {
+  font-family: var(--ff-display);
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 500;
+  color: var(--ash-vibhuti);
+  margin: 0 0 0.8rem;
+  line-height: 1.15;
+}
+.tm-one p {
+  max-width: 56rem;
+  margin: 0 auto 0.8rem;
+  font-family: var(--ff-display);
+  color: var(--ash-vibhuti);
+  font-size: 1.04rem;
+  line-height: 1.7;
+}
+.tm-one em { color: var(--gold-trishul); font-style: italic; }
+
+
+/* ---------- TRINITY GRID ---------- */
+.tm-head {
+  text-align: center;
+  margin: clamp(2.5rem, 5vw, 4rem) 0 clamp(1rem, 2vw, 1.6rem);
+}
+.tm-head .deva-sm {
+  font-family: var(--ff-deva);
+  color: var(--gold-trishul);
+  font-size: 1.05rem;
+  margin: 0 0 0.4rem;
+}
+.tm-head h2 {
+  font-family: var(--ff-display);
+  font-size: clamp(2rem, 3.4vw, 2.8rem);
+  font-weight: 500;
+  color: var(--ash-vibhuti);
+  margin: 0 0 0.6rem;
+  line-height: 1.1;
+}
+.tm-head p {
+  max-width: 52rem;
+  margin: 0 auto;
+  font-family: var(--ff-display);
+  color: var(--silver-trishul);
+  font-size: 1.05rem;
+  line-height: 1.65;
+}
+
+.tm-trinity {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.4rem;
+  margin: 1.5rem 0 clamp(3rem, 5vw, 4rem);
+}
+@media (max-width: 1000px) { .tm-trinity { grid-template-columns: 1fr; } }
+
+
+/* ---------- GOD CARD ---------- */
+.tmgod {
+  position: relative;
+  padding: 2rem 1.6rem;
+  border-radius: 22px;
+  border: 1px solid rgba(244,236,216,0.20);
+  background: linear-gradient(180deg, rgba(244,236,216,0.05), rgba(244,236,216,0.015));
+  isolation: isolate;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.4s ease, border-color 0.3s ease;
+}
+.tmgod:hover { transform: translateY(-5px); }
+.tmgod::before {
+  content: "";
+  position: absolute; inset: -40%;
+  background: conic-gradient(from 0deg,
+    rgba(244,236,216,0.0),
+    rgba(244,236,216,0.18),
+    rgba(244,236,216,0.0));
+  filter: blur(45px);
+  opacity: 0.55;
+  z-index: -1;
+  transition: transform 1s ease;
+}
+.tmgod:hover::before { transform: rotate(20deg); }
+
+.tmgod__num {
+  font-family: var(--ff-caps);
+  letter-spacing: 0.3em;
+  font-size: 0.7rem;
+  color: var(--silver-trishul);
+}
+.tmgod__deva {
+  font-family: var(--ff-deva);
+  font-size: 1.6rem;
+  margin: 0.4rem 0 0.3rem;
+}
+.tmgod__name {
+  font-family: var(--ff-display);
+  font-size: clamp(1.8rem, 2.6vw, 2.2rem);
+  font-weight: 500;
+  margin: 0 0 0.2rem;
+  line-height: 1.1;
+  color: var(--ash-vibhuti);
+}
+.tmgod__title {
+  font-family: var(--ff-caps);
+  letter-spacing: 0.24em;
+  font-size: 0.72rem;
+  margin: 0 0 1rem;
+}
+.tmgod__body {
+  font-family: var(--ff-display);
+  color: var(--ash-vibhuti);
+  font-size: 1rem;
+  line-height: 1.65;
+  margin: 0 0 1rem;
+}
+.tmgod__body em { font-style: italic; }
+.tmgod__body p { margin: 0 0 0.7rem; }
+.tmgod__body p:last-child { margin: 0; }
+
+.tmgod__meta {
+  margin-top: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem 0.8rem;
+  border-top: 1px dashed rgba(244,236,216,0.18);
+  padding-top: 0.9rem;
+  font-family: var(--ff-ui);
+  font-size: 0.78rem;
+  color: var(--ash-vibhuti);
+}
+.tmgod__meta div { display: flex; flex-direction: column; gap: 0.1rem; }
+.tmgod__meta strong {
+  font-family: var(--ff-caps);
+  letter-spacing: 0.18em;
+  font-size: 0.62rem;
+  color: var(--silver-trishul);
+}
+
+/* --- BRAHMĀ (gold) --- */
+.tmgod--brahma { border-color: rgba(217,164,65,0.45); }
+.tmgod--brahma::before {
+  background: conic-gradient(from 0deg,
+    rgba(217,164,65,0.0),
+    rgba(217,164,65,0.32),
+    rgba(255,122,61,0.16),
+    rgba(217,164,65,0.0));
+}
+.tmgod--brahma .tmgod__deva,
+.tmgod--brahma .tmgod__title { color: var(--gold-trishul); }
+
+/* --- VIṢṆU (blue) --- */
+.tmgod--vishnu { border-color: rgba(43,182,255,0.45); }
+.tmgod--vishnu::before {
+  background: conic-gradient(from 0deg,
+    rgba(43,182,255,0.0),
+    rgba(43,182,255,0.32),
+    rgba(95,227,192,0.18),
+    rgba(43,182,255,0.0));
+}
+.tmgod--vishnu .tmgod__deva,
+.tmgod--vishnu .tmgod__title { color: var(--cosmic-blue); }
+
+/* --- ŚIVA (violet) --- */
+.tmgod--shiva { border-color: rgba(122,77,223,0.45); }
+.tmgod--shiva::before {
+  background: conic-gradient(from 0deg,
+    rgba(122,77,223,0.0),
+    rgba(122,77,223,0.32),
+    rgba(201,198,228,0.18),
+    rgba(122,77,223,0.0));
+}
+.tmgod--shiva .tmgod__deva,
+.tmgod--shiva .tmgod__title { color: var(--cosmic-violet); }
+
+
+/* ---------- INTERPLAY ---------- */
+.tm-cycle {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
+  gap: 0.9rem;
+  margin: 1.5rem 0;
+}
+.tm-step {
+  padding: 1.2rem 1rem;
+  border-radius: 16px;
+  border: 1px solid rgba(244,236,216,0.18);
+  background: linear-gradient(180deg, rgba(244,236,216,0.04), rgba(244,236,216,0.01));
+  text-align: center;
+  position: relative;
+}
+.tm-step .num {
+  font-family: var(--ff-caps);
+  letter-spacing: 0.3em;
+  font-size: 0.65rem;
+  color: var(--silver-trishul);
+  display: block;
+  margin-bottom: 0.4rem;
+}
+.tm-step .deva {
+  font-family: var(--ff-deva);
+  color: var(--gold-trishul);
+  font-size: 1.2rem;
+  margin: 0 0 0.2rem;
+}
+.tm-step h4 {
+  font-family: var(--ff-display);
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--ash-vibhuti);
+  margin: 0 0 0.3rem;
+}
+.tm-step p {
+  font-family: var(--ff-display);
+  color: var(--ash-vibhuti);
+  font-size: 0.92rem;
+  line-height: 1.55;
+  margin: 0;
+}
+.tm-step--01 { border-color: rgba(217,164,65,0.40); }    /* sṛṣṭi — Brahmā */
+.tm-step--02 { border-color: rgba(43,182,255,0.40); }    /* sthiti — Viṣṇu */
+.tm-step--03 { border-color: rgba(122,77,223,0.40); }    /* saṁhāra — Śiva (Rudra) */
+.tm-step--04 { border-color: rgba(201,198,228,0.40); }   /* tirobhāva — Śiva (veiling) */
+.tm-step--05 { border-color: rgba(95,227,192,0.40); }    /* anugraha — Śiva (grace) */
+
+
+/* ---------- CLOSING TEACHING ---------- */
+.tm-teaching {
+  margin: clamp(2rem, 4vw, 3.5rem) 0;
+  padding: clamp(2rem, 4vw, 2.8rem);
+  border-radius: 22px;
+  border: 1px solid rgba(217,164,65,0.32);
+  background:
+    radial-gradient(circle at 25% 25%, rgba(217,164,65,0.10), transparent 55%),
+    radial-gradient(circle at 50% 80%, rgba(43,182,255,0.08), transparent 55%),
+    radial-gradient(circle at 80% 30%, rgba(122,77,223,0.10), transparent 55%),
+    linear-gradient(180deg, rgba(244,236,216,0.04), rgba(244,236,216,0.012));
+  text-align: center;
+}
+.tm-teaching .deva-sm {
+  font-family: var(--ff-deva);
+  color: var(--gold-trishul);
+  font-size: 1.05rem;
+  margin: 0 0 0.5rem;
+}
+.tm-teaching h2 {
+  font-family: var(--ff-display);
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  color: var(--ash-vibhuti);
+  font-weight: 500;
+  margin: 0 0 0.6rem;
+}
+.tm-teaching p {
+  font-family: var(--ff-display);
+  color: var(--silver-trishul);
+  font-size: 1.05rem;
+  line-height: 1.65;
+  max-width: 52rem;
+  margin: 0 auto 0.6rem;
+}
+.tm-teaching em { color: var(--gold-trishul); font-style: italic; }
