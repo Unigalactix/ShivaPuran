@@ -1,0 +1,244 @@
+/* ===========================================================
+   THEMES PAGE — assets/css/pages/themes.css
+   Eternal currents · 8 living teachings · pillar of light
+   =========================================================== */
+
+/* ---------- HERO ---------- */
+.th-hero {
+  position: relative;
+  padding: clamp(4rem, 9vw, 8rem) 0 clamp(2.5rem, 5vw, 4rem);
+  text-align: center;
+  isolation: isolate;
+  overflow: hidden;
+}
+.th-hero::before {
+  content: "";
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(circle at 50% 30%, rgba(217,164,65,0.16), transparent 55%),
+    radial-gradient(circle at 25% 75%, rgba(122,77,223,0.16), transparent 55%),
+    radial-gradient(circle at 75% 70%, rgba(43,182,255,0.14), transparent 55%);
+  z-index: -1;
+}
+.th-hero .deva {
+  font-family: var(--ff-deva);
+  color: var(--gold-trishul);
+  font-size: clamp(1.3rem, 2.6vw, 1.9rem);
+  margin-bottom: 0.6rem;
+  text-shadow: 0 0 18px rgba(217,164,65,0.40);
+}
+.th-hero h1 {
+  font-family: var(--ff-display);
+  font-size: clamp(2.6rem, 7vw, 5rem);
+  line-height: 1.05;
+  font-weight: 500;
+  margin: 0 0 1rem;
+}
+.th-hero p {
+  max-width: 56rem;
+  margin: 0 auto;
+  font-family: var(--ff-display);
+  font-size: clamp(1.05rem, 1.4vw, 1.25rem);
+  color: var(--silver-trishul);
+  line-height: 1.7;
+}
+.th-hero .divider {
+  margin: 2rem auto 0;
+  color: var(--gold-trishul);
+  letter-spacing: 0.6em;
+  font-size: 0.85rem;
+}
+
+
+/* ---------- INDEX RIBBON ---------- */
+.th-index {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  justify-content: center;
+  margin: 0 0 clamp(2rem, 4vw, 3rem);
+}
+.th-index a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid rgba(217,164,65,0.30);
+  background: rgba(244,236,216,0.04);
+  color: var(--ash-vibhuti);
+  font-family: var(--ff-caps);
+  letter-spacing: 0.18em;
+  font-size: 0.7rem;
+  text-decoration: none;
+  transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+}
+.th-index a:hover {
+  border-color: var(--gold-trishul);
+  background: rgba(217,164,65,0.10);
+  transform: translateY(-1px);
+}
+.th-index a::before {
+  content: "";
+  display: inline-block;
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--gold-trishul);
+  box-shadow: 0 0 8px var(--gold-trishul);
+}
+
+
+/* ---------- CURRENT GRID ---------- */
+.th-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr));
+  gap: 1.4rem;
+  margin: 1rem 0 clamp(3rem, 5vw, 4rem);
+}
+
+.thcard {
+  position: relative;
+  padding: 2rem 1.7rem 1.8rem;
+  border-radius: 22px;
+  border: 1px solid rgba(244,236,216,0.18);
+  background: linear-gradient(180deg, rgba(244,236,216,0.05), rgba(244,236,216,0.012));
+  isolation: isolate;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.35s ease, border-color 0.3s ease;
+  scroll-margin-top: 90px;
+}
+.thcard:hover {
+  transform: translateY(-5px);
+  border-color: var(--gold-trishul);
+}
+.thcard::before {
+  content: "";
+  position: absolute; inset: -40%;
+  background: conic-gradient(from 90deg,
+    rgba(244,236,216,0.0),
+    rgba(244,236,216,0.18),
+    rgba(244,236,216,0.0));
+  filter: blur(40px);
+  opacity: 0.55;
+  z-index: -1;
+  transition: transform 1s ease;
+}
+.thcard:hover::before { transform: rotate(18deg); }
+
+.thcard__num {
+  font-family: var(--ff-caps);
+  letter-spacing: 0.3em;
+  font-size: 0.7rem;
+  color: var(--silver-trishul);
+}
+.thcard__deva {
+  font-family: var(--ff-deva);
+  font-size: 1.4rem;
+  color: var(--ash-vibhuti);
+  margin: 0.4rem 0 0.3rem;
+}
+.thcard__name {
+  font-family: var(--ff-display);
+  font-size: clamp(1.6rem, 2.4vw, 2rem);
+  font-weight: 500;
+  margin: 0 0 0.2rem;
+  line-height: 1.15;
+  color: var(--ash-vibhuti);
+}
+.thcard__epithet {
+  font-family: var(--ff-caps);
+  letter-spacing: 0.22em;
+  font-size: 0.72rem;
+  color: var(--gold-trishul);
+  margin: 0 0 1rem;
+}
+.thcard__body {
+  font-family: var(--ff-display);
+  color: var(--ash-vibhuti);
+  font-size: 1rem;
+  line-height: 1.65;
+  margin: 0 0 1rem;
+}
+.thcard__body p { margin: 0 0 0.65rem; }
+.thcard__body p:last-child { margin: 0; }
+.thcard__body em { font-style: italic; color: var(--gold-trishul); }
+.thcard__body strong { color: var(--ash-vibhuti); font-weight: 600; }
+
+.thcard__pull {
+  margin: 1rem 0;
+  padding: 1rem 1.1rem;
+  border-left: 3px solid var(--gold-trishul);
+  background: rgba(217,164,65,0.06);
+  border-radius: 6px;
+  font-family: var(--ff-display);
+  font-style: italic;
+  color: var(--ash-vibhuti);
+  font-size: 0.98rem;
+  line-height: 1.55;
+}
+.thcard__pull cite {
+  display: block;
+  margin-top: 0.5rem;
+  font-style: normal;
+  font-family: var(--ff-caps);
+  letter-spacing: 0.2em;
+  font-size: 0.65rem;
+  color: var(--silver-trishul);
+}
+
+.thcard__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: auto;
+  padding-top: 0.9rem;
+  border-top: 1px dashed rgba(244,236,216,0.18);
+}
+
+/* Per-current tint */
+.thcard--ash       { border-color: rgba(201,198,228,0.40); }   /* bhasma / impermanence */
+.thcard--ananda    { border-color: rgba(217,164,65,0.45); }    /* bliss */
+.thcard--fire      { border-color: rgba(255,122,61,0.45); }    /* tapas */
+.thcard--love      { border-color: rgba(200,17,59,0.40); }     /* prema */
+.thcard--silence   { border-color: rgba(95,227,192,0.40); }    /* mauna */
+.thcard--dance     { border-color: rgba(122,77,223,0.45); }    /* līlā / dance */
+.thcard--space     { border-color: rgba(43,182,255,0.42); }    /* ākāśa */
+.thcard--grace     { border-color: rgba(244,236,216,0.45); }   /* anugraha */
+
+
+/* ---------- CLOSING TEACHING ---------- */
+.th-teaching {
+  margin: clamp(2rem, 4vw, 3.5rem) 0;
+  padding: clamp(2rem, 4vw, 2.8rem);
+  border-radius: 22px;
+  border: 1px solid rgba(217,164,65,0.32);
+  background:
+    radial-gradient(circle at 30% 30%, rgba(217,164,65,0.10), transparent 55%),
+    radial-gradient(circle at 75% 70%, rgba(122,77,223,0.10), transparent 55%),
+    linear-gradient(180deg, rgba(244,236,216,0.04), rgba(244,236,216,0.012));
+  text-align: center;
+}
+.th-teaching .deva-sm {
+  font-family: var(--ff-deva);
+  color: var(--gold-trishul);
+  font-size: 1.05rem;
+  margin: 0 0 0.5rem;
+}
+.th-teaching h2 {
+  font-family: var(--ff-display);
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  color: var(--ash-vibhuti);
+  font-weight: 500;
+  margin: 0 0 0.6rem;
+}
+.th-teaching p {
+  font-family: var(--ff-display);
+  color: var(--silver-trishul);
+  font-size: 1.05rem;
+  line-height: 1.65;
+  max-width: 52rem;
+  margin: 0 auto 0.6rem;
+}
+.th-teaching em { color: var(--gold-trishul); font-style: italic; }

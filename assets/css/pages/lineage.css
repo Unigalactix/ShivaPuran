@@ -1,0 +1,257 @@
+/* ===========================================================
+   LINEAGE PAGE — assets/css/pages/lineage.css
+   Divine family tree · generations · CSS-only tree branches
+   =========================================================== */
+
+/* ---------- HERO ---------- */
+.ln-hero {
+  position: relative;
+  padding: clamp(4rem, 9vw, 8rem) 0 clamp(2.5rem, 5vw, 4rem);
+  text-align: center;
+  isolation: isolate;
+  overflow: hidden;
+}
+.ln-hero::before {
+  content: "";
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(circle at 50% 30%, rgba(122,77,223,0.16), transparent 55%),
+    radial-gradient(circle at 25% 75%, rgba(217,164,65,0.14), transparent 55%),
+    radial-gradient(circle at 75% 70%, rgba(43,182,255,0.14), transparent 55%);
+  z-index: -1;
+}
+.ln-hero .deva {
+  font-family: var(--ff-deva);
+  color: var(--gold-trishul);
+  font-size: clamp(1.3rem, 2.6vw, 1.9rem);
+  margin-bottom: 0.6rem;
+  text-shadow: 0 0 18px rgba(217,164,65,0.40);
+}
+.ln-hero h1 {
+  font-family: var(--ff-display);
+  font-size: clamp(2.6rem, 7vw, 5rem);
+  line-height: 1.05;
+  font-weight: 500;
+  margin: 0 0 1rem;
+}
+.ln-hero p {
+  max-width: 56rem;
+  margin: 0 auto;
+  font-family: var(--ff-display);
+  font-size: clamp(1.05rem, 1.4vw, 1.25rem);
+  color: var(--silver-trishul);
+  line-height: 1.7;
+}
+.ln-hero .divider {
+  margin: 2rem auto 0;
+  color: var(--gold-trishul);
+  letter-spacing: 0.6em;
+  font-size: 0.85rem;
+}
+
+
+/* ---------- SECTION HEAD ---------- */
+.ln-head {
+  text-align: center;
+  margin: clamp(2.5rem, 5vw, 4rem) 0 clamp(1rem, 2vw, 1.6rem);
+}
+.ln-head .deva-sm {
+  font-family: var(--ff-deva);
+  color: var(--gold-trishul);
+  font-size: 1.05rem;
+  margin: 0 0 0.4rem;
+}
+.ln-head h2 {
+  font-family: var(--ff-display);
+  font-size: clamp(2rem, 3.4vw, 2.8rem);
+  font-weight: 500;
+  color: var(--ash-vibhuti);
+  margin: 0 0 0.6rem;
+  line-height: 1.1;
+}
+.ln-head p {
+  max-width: 52rem;
+  margin: 0 auto;
+  font-family: var(--ff-display);
+  color: var(--silver-trishul);
+  font-size: 1.05rem;
+  line-height: 1.65;
+}
+
+
+/* ---------- THE FAMILY TREE (CSS-only) ---------- */
+.ln-tree {
+  margin: 1.5rem auto;
+  text-align: center;
+  position: relative;
+}
+
+/* a "generation" row = horizontal group of nodes */
+.ln-gen {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  gap: 1.2rem;
+  position: relative;
+  padding: 1rem 0;
+}
+.ln-gen + .ln-gen { margin-top: 2rem; }
+
+/* vertical connector before each generation (except first) */
+.ln-gen:not(.ln-gen--top)::before {
+  content: "";
+  position: absolute;
+  top: -1.8rem;
+  left: 50%;
+  width: 2px;
+  height: 1.8rem;
+  background: linear-gradient(180deg,
+    rgba(217,164,65,0.55),
+    rgba(217,164,65,0.0));
+}
+
+/* node card */
+.ln-node {
+  position: relative;
+  flex: 0 1 240px;
+  min-width: 200px;
+  padding: 1.2rem 1rem 1rem;
+  border-radius: 18px;
+  border: 1px solid rgba(244,236,216,0.20);
+  background: linear-gradient(180deg, rgba(244,236,216,0.05), rgba(244,236,216,0.012));
+  text-align: center;
+  isolation: isolate;
+  overflow: hidden;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+.ln-node:hover {
+  transform: translateY(-3px);
+  border-color: var(--gold-trishul);
+}
+.ln-node::before {
+  content: "";
+  position: absolute; inset: -40%;
+  background: conic-gradient(from 0deg,
+    rgba(244,236,216,0.0),
+    rgba(244,236,216,0.18),
+    rgba(244,236,216,0.0));
+  filter: blur(35px);
+  opacity: 0.5;
+  z-index: -1;
+  transition: transform 1s ease;
+}
+.ln-node:hover::before { transform: rotate(15deg); }
+
+.ln-node__role {
+  font-family: var(--ff-caps);
+  letter-spacing: 0.25em;
+  font-size: 0.6rem;
+  color: var(--silver-trishul);
+  margin: 0 0 0.4rem;
+}
+.ln-node__deva {
+  font-family: var(--ff-deva);
+  color: var(--gold-trishul);
+  font-size: 1.2rem;
+  margin: 0 0 0.2rem;
+}
+.ln-node__name {
+  font-family: var(--ff-display);
+  font-size: 1.35rem;
+  font-weight: 500;
+  margin: 0 0 0.2rem;
+  color: var(--ash-vibhuti);
+  line-height: 1.15;
+}
+.ln-node__epithet {
+  font-family: var(--ff-display);
+  font-style: italic;
+  color: var(--silver-trishul);
+  font-size: 0.88rem;
+  margin: 0 0 0.55rem;
+}
+.ln-node__body {
+  font-family: var(--ff-display);
+  color: var(--ash-vibhuti);
+  font-size: 0.88rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* tinted variants */
+.ln-node--core    { border-color: rgba(122,77,223,0.50); }   /* Brahman / Śiva */
+.ln-node--shakti  { border-color: rgba(200,17,59,0.45); }    /* Devī */
+.ln-node--brahma  { border-color: rgba(217,164,65,0.45); }   /* Brahmā */
+.ln-node--vishnu  { border-color: rgba(43,182,255,0.45); }   /* Viṣṇu */
+.ln-node--son     { border-color: rgba(95,227,192,0.42); }   /* sons */
+.ln-node--mount   { border-color: rgba(201,198,228,0.42); }  /* vāhana / gaṇa */
+.ln-node--rishi   { border-color: rgba(255,122,61,0.42); }   /* rishis */
+
+/* Couple marriage band — show two nodes side by side with heart line */
+.ln-couple {
+  display: flex;
+  gap: 1.2rem;
+  align-items: stretch;
+  position: relative;
+}
+.ln-couple::after {
+  content: "❀";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--gold-trishul);
+  font-size: 1.3rem;
+  text-shadow: 0 0 8px rgba(217,164,65,0.55);
+  z-index: 1;
+}
+@media (max-width: 600px) {
+  .ln-couple { flex-direction: column; }
+  .ln-couple::after { display: none; }
+}
+
+
+/* ---------- ANCILLARY GRID (gaṇas, sapta-ṛṣis) ---------- */
+.ln-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0 clamp(3rem, 5vw, 4rem);
+}
+
+
+/* ---------- CLOSING TEACHING ---------- */
+.ln-teaching {
+  margin: clamp(2rem, 4vw, 3.5rem) 0;
+  padding: clamp(2rem, 4vw, 2.8rem);
+  border-radius: 22px;
+  border: 1px solid rgba(217,164,65,0.32);
+  background:
+    radial-gradient(circle at 30% 30%, rgba(217,164,65,0.10), transparent 55%),
+    radial-gradient(circle at 75% 70%, rgba(122,77,223,0.10), transparent 55%),
+    linear-gradient(180deg, rgba(244,236,216,0.04), rgba(244,236,216,0.012));
+  text-align: center;
+}
+.ln-teaching .deva-sm {
+  font-family: var(--ff-deva);
+  color: var(--gold-trishul);
+  font-size: 1.05rem;
+  margin: 0 0 0.5rem;
+}
+.ln-teaching h2 {
+  font-family: var(--ff-display);
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  color: var(--ash-vibhuti);
+  font-weight: 500;
+  margin: 0 0 0.6rem;
+}
+.ln-teaching p {
+  font-family: var(--ff-display);
+  color: var(--silver-trishul);
+  font-size: 1.05rem;
+  line-height: 1.65;
+  max-width: 52rem;
+  margin: 0 auto 0.6rem;
+}
+.ln-teaching em { color: var(--gold-trishul); font-style: italic; }
