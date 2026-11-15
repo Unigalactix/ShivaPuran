@@ -1,0 +1,53 @@
+/* ============================================================
+   MADHUBANI (MITHILA) KEY SCENES — bright folk-art panels
+   on the dark codex: cream paper, ink outlines, natural
+   pigments, double border bands, bharni pattern-fills.
+   ============================================================ */
+.mb-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+  gap: clamp(1.1rem, 2.4vw, 1.8rem);
+  margin-top: clamp(1.6rem, 3.5vw, 2.6rem);
+}
+.mb-card {
+  background: #f7ead2;
+  border: 1px solid rgba(217, 164, 65, .4);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 18px 44px rgba(0, 0, 0, .45);
+  transition: transform .35s var(--ease, ease), box-shadow .35s var(--ease, ease);
+}
+.mb-card:hover { transform: translateY(-5px); box-shadow: 0 26px 54px rgba(0, 0, 0, .55); }
+.mb-card__art { line-height: 0; background: #f7ead2; }
+.mb-card__art svg { width: 100%; height: auto; display: block; transition: transform .6s var(--ease, ease); }
+.mb-card:hover .mb-card__art svg { transform: scale(1.025); }
+.mb-card__body { padding: 1.05rem 1.2rem 1.25rem; color: #2e1608; }
+.mb-card__sa {
+  font-family: var(--ff-deva, serif);
+  color: #d43d1a;
+  font-size: 1.02rem;
+  margin: 0 0 .15rem;
+}
+.mb-card__title {
+  font-family: var(--ff-display, serif);
+  font-size: 1.42rem;
+  font-weight: 600;
+  line-height: 1.2;
+  margin: 0 0 .5rem;
+  color: #2e1608;
+}
+.mb-card__caption { margin: 0; font-size: .94rem; line-height: 1.6; color: #57391f; }
+.mb-note {
+  text-align: center;
+  color: var(--ash-mute, #b9b0c6);
+  font-family: var(--ff-display, serif);
+  font-style: italic;
+  font-size: 1.05rem;
+  margin-top: 1.6rem;
+}
+@media (max-width: 420px) { .mb-grid { grid-template-columns: 1fr; } }
+@media (prefers-reduced-motion: reduce) {
+  .mb-card, .mb-card__art svg { transition: none; }
+  .mb-card:hover { transform: none; }
+  .mb-card:hover .mb-card__art svg { transform: none; }
+}
