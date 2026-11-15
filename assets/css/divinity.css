@@ -243,3 +243,6 @@
   .pt-card, .pt-strip__item, .codex-link { transition: none; }
   .pt-card:hover, .pt-strip__item:hover, .codex-link:hover { transform: none; }
 }
+
+/* Reading Book nav highlight (book.html) */
+.site-nav a[href="book.html"] { color: var(--gold-soft); font-weight: 600; }

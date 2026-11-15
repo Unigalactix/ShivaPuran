@@ -1,0 +1,193 @@
+/* ============================================================
+   THE READING BOOK — assets/css/book.css
+   A JINX-style page-turning reader for the Śiva Purāṇa Codex:
+   dark shell, cream Madhubani paper, 3D leaf turns.
+   ============================================================ */
+
+/* ---------- Page intro ---------- */
+.book-intro { padding: clamp(2.2rem, 5vw, 4rem) 0 clamp(1.2rem, 3vw, 2rem); text-align: center; }
+.book-intro__eyebrow {
+  font-family: var(--ff-caps); font-size: var(--fs-eyebrow); letter-spacing: .34em;
+  text-transform: uppercase; color: var(--gold-trishul); margin: 0 0 .9rem;
+}
+.book-intro__eyebrow .deva { font-family: var(--ff-deva); letter-spacing: .08em; }
+.book-intro h1 {
+  font-family: var(--ff-display); font-weight: 500; color: var(--ash-vibhuti);
+  font-size: clamp(2.1rem, 1.4rem + 3.4vw, 3.6rem); line-height: 1.08; margin: 0 0 1rem;
+}
+.book-intro__lede { max-width: 62ch; margin: 0 auto; color: var(--ash-mute); font-size: var(--fs-lede); line-height: 1.65; }
+.book-section { padding: 0 0 clamp(2.5rem, 6vw, 4.5rem); }
+
+/* ---------- Reader shell ---------- */
+.reader {
+  --bk-line: rgba(244, 236, 216, .16);
+  --bk-ink: #f4ecd8;
+  --bk-dim: #b9b0c6;
+  --bk-accent: #d9a441;
+  --bk-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  width: min(1080px, calc(100% - 32px));
+  height: min(880px, 92svh);
+  min-height: 540px;
+  margin: 0 auto;
+  background: #171b1b;
+  border: 1px solid rgba(217, 164, 65, .28);
+  border-radius: 14px;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, .55);
+  overflow: hidden;
+  color: var(--bk-ink);
+}
+.reader-viewport { display: flex; flex-direction: column; width: 100%; height: 100%; min-height: 0; background: #171b1b; overflow: hidden; }
+.reader-viewport:fullscreen { width: 100vw; height: 100dvh; }
+.reader.reader-full-page { position: fixed; inset: 0; z-index: 900; width: 100%; height: 100dvh; max-width: none; min-height: 0; margin: 0; border: 0; border-radius: 0; }
+.reader-full-page .book { width: min(840px, 100%); }
+.reader-full-page .book-page-text { inset-inline: clamp(24px, 6vw, 84px); }
+.reader-full-page .reader-header { padding-block: 8px; }
+.reader-full-page .reader-header .tiny-label { display: none; }
+
+.reader-header { display: flex; align-items: flex-start; justify-content: space-between; padding: 14px 24px; border-bottom: 1px solid var(--bk-line); }
+.reader-header h2 { font-family: var(--ff-caps); font-weight: 600; font-size: 1.2rem; letter-spacing: .06em; margin: .15rem 0 0; color: var(--bk-ink); }
+.reader-header > div:first-child { min-width: 0; }
+.tiny-label { font-family: var(--bk-mono); font-size: .62rem; letter-spacing: .14em; text-transform: uppercase; color: var(--bk-dim); }
+.reader-window-controls { display: flex; align-items: center; gap: 10px; margin-left: 20px; flex-shrink: 0; }
+.reader-fullscreen {
+  display: inline-flex; align-items: center; gap: 7px; min-height: 43px; padding: 8px 12px;
+  border: 1px solid var(--bk-line); border-radius: 8px; background: transparent; color: var(--bk-ink);
+  font-family: var(--bk-mono); font-size: .72rem; cursor: pointer;
+}
+.reader-fullscreen:hover, .reader-fullscreen[aria-pressed="true"] { border-color: var(--bk-accent); background: #26312b; }
+.icon-button {
+  display: inline-flex; align-items: center; justify-content: center; width: 43px; height: 43px;
+  border: 1px solid var(--bk-line); border-radius: 8px; background: transparent; color: var(--bk-ink);
+  font-size: 1rem; text-decoration: none; cursor: pointer; flex-shrink: 0;
+}
+.icon-button:hover { border-color: var(--bk-accent); color: var(--bk-accent); }
+
+.reader-toolbar { display: flex; align-items: center; padding: 10px 24px; gap: 16px; flex-wrap: wrap; border-bottom: 1px solid var(--bk-line); }
+.reader-toolbar label { display: inline-flex; align-items: center; gap: 8px; font-family: var(--bk-mono); font-size: .68rem; letter-spacing: .1em; text-transform: uppercase; color: var(--bk-dim); min-width: 0; }
+.reader-toolbar select {
+  max-width: 300px; min-height: 38px; padding: 6px 10px; border: 1px solid var(--bk-line); border-radius: 8px;
+  background: #101315; color: var(--bk-ink); font-family: var(--ff-ui); font-size: .85rem;
+}
+.reader-toolbar select:disabled { opacity: .5; }
+.reader-text-controls { margin-left: auto; display: inline-flex; gap: 8px; }
+.reader-text-controls button {
+  min-width: 40px; min-height: 38px; padding: 6px 10px; border: 1px solid var(--bk-line); border-radius: 8px;
+  background: transparent; color: var(--bk-ink); font-family: var(--bk-mono); font-size: .78rem; cursor: pointer;
+}
+.reader-text-controls button:hover:not(:disabled) { border-color: var(--bk-accent); }
+.reader-text-controls button:disabled { opacity: .4; cursor: default; }
+
+.book-view-status { margin: 8px 24px 0; color: #ddc2a8; font-size: .7rem; font-family: var(--bk-mono); }
+#reader-state:not(:empty) { margin: 8px 24px; font-size: .85rem; color: var(--bk-dim); max-height: 25svh; overflow-y: auto; }
+#reader-state .error-message { margin: 0; padding: 10px; border: 1px solid #d43d1a; border-radius: 8px; color: #f4ecd8; }
+#reader-state .retry-button { margin-left: 12px; padding: 6px 12px; border: 1px solid var(--bk-accent); border-radius: 8px; background: transparent; color: var(--bk-accent); cursor: pointer; font-family: var(--bk-mono); font-size: .72rem; }
+
+/* ---------- The book ---------- */
+.book-stage { flex: 1; min-height: 180px; padding: 18px 48px 14px; display: flex; justify-content: center; perspective: 1800px; overflow: hidden; }
+.book { position: relative; width: min(590px, 100%); height: 100%; outline-offset: 9px; touch-action: pan-y; --book-size: 18px; }
+.book::before, .book::after { content: ""; position: absolute; inset: 3px -4px -3px 4px; background: #d9c9a3; border-radius: 2px 5px 5px 2px; box-shadow: 2px 2px 0 #57503e; }
+.book::after { inset: 6px -7px -6px 7px; z-index: -1; background: #a2936f; box-shadow: 10px 12px 30px #0008; }
+.book-page {
+  position: absolute; inset: 0; margin: 0; overflow: hidden; color: #2e1608;
+  background: linear-gradient(90deg, #e6d7b4, #f7ead2 4%, #faf1dc 12%, #faf1dc 95%, #eee0bd);
+  border-radius: 2px 4px 4px 2px; box-shadow: inset 1px 0 2px #fff7;
+}
+.book-page.cover-page { background: linear-gradient(90deg, #e2d0a4, #f3e5c3 6%, #f7ead2 14%, #f7ead2 94%, #e9dab2); }
+
+.book-running-title {
+  position: absolute; left: 34px; right: 30px; top: 17px; color: #7a6742; font: 10px/1.5 var(--bk-mono, ui-monospace, monospace);
+  text-transform: uppercase; letter-spacing: .08em; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  border-bottom: 1px solid #d8c9a3; padding-bottom: 9px;
+}
+.book-page-text { position: absolute; inset: 57px 34px 43px 38px; overflow: hidden; font: var(--book-size)/1.65 Georgia, "Times New Roman", serif; overflow-wrap: anywhere; }
+.book-page-text p { margin: 0 0 .8em; white-space: pre-wrap; }
+.book-page-text .source-context { font-size: .8em; color: #7c6c4b; margin-bottom: 1.5em; }
+.book-page-text h3 { font: 1.6em/1.2 Georgia, "Times New Roman", serif; margin: 0 0 .85em; letter-spacing: -.025em; color: #2e1608; }
+.book-page-text .book-chapter-subtitle { color: #7c6c4b; font-size: .85em; margin-top: -.6em; margin-bottom: 1.2em; }
+.book-page-text .book-chapter-deva { font-family: "Noto Serif Devanagari", serif; color: #d43d1a; font-size: 1.05em; margin: -.4em 0 1.1em; }
+.book-page-text hr { width: 42px; border: 0; border-top: 1px solid #b3903f; margin: 1.2em auto; }
+.book-folio { position: absolute; bottom: 13px; right: 30px; left: 34px; display: flex; justify-content: space-between; color: #7a6742; font: 10px/1.5 var(--bk-mono, ui-monospace, monospace); }
+.book-measure { visibility: hidden; pointer-events: none; }
+
+/* Chapter plates (Madhubani scene panels + portrait medallions) */
+.book-plate { margin: 0 0 1.1em; }
+.book-plate svg { display: block; width: 100%; height: auto; }
+.book-plate--portrait { width: min(190px, 52%); margin-inline: auto; }
+
+/* The 3D turning leaf */
+.book-leaf { position: absolute; inset: 0; transform-origin: left center; transform-style: preserve-3d; z-index: 3; pointer-events: none; }
+.book-leaf > .book-page { backface-visibility: hidden; }
+.book-leaf-back { position: absolute; inset: 0; backface-visibility: hidden; transform: rotateY(180deg); background: linear-gradient(90deg, #e9dcbc, #f4ead0 70%, #c9b98f); box-shadow: -12px 0 24px #0002; }
+.book-leaf::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, #0003, transparent 25%, #0001); pointer-events: none; }
+
+/* ---------- Madhubani cover ---------- */
+.book-cover-open { display: block; padding: 0; border: 0; width: 100%; height: 100%; background: transparent; cursor: pointer; text-align: center; }
+.book-cover-open:focus-visible { outline: 2px solid #d43d1a; outline-offset: -6px; }
+.book-cover-open:disabled { cursor: default; }
+.mb-cover { height: 100%; display: flex; flex-direction: column; align-items: center; padding: clamp(14px, 3.5%, 26px); box-sizing: border-box; border: 3px solid #2e1608; outline: 1.6px solid #2e1608; outline-offset: -9px; }
+.mb-cover__band { width: 100%; height: 15px; flex-shrink: 0; border: 1.6px solid #2e1608;
+  background:
+    repeating-linear-gradient(45deg, rgba(212, 61, 26, .85) 0 7px, transparent 7px 14px),
+    repeating-linear-gradient(-45deg, rgba(212, 61, 26, .85) 0 7px, transparent 7px 14px),
+    #e8a812;
+}
+.mb-cover__deva { font-family: "Noto Serif Devanagari", serif; color: #d43d1a; font-size: clamp(1.3rem, 4.5vw, 1.9rem); margin: clamp(10px, 3%, 20px) 0 2px; }
+.mb-cover__title { font-family: "Cinzel", "Times New Roman", serif; font-weight: 600; color: #2e1608; font-size: clamp(1.7rem, 6vw, 2.6rem); letter-spacing: .04em; margin: 0; line-height: 1.1; }
+.mb-cover__sub { font-family: Georgia, serif; font-style: italic; color: #7c6c4b; font-size: clamp(.82rem, 2.6vw, .98rem); margin: 6px 0 4px; }
+.mb-cover__count { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: .62rem; letter-spacing: .18em; text-transform: uppercase; color: #7a6742; margin: 2px 0 0; }
+.mb-cover__art { width: 100%; margin: auto 0; padding: clamp(8px, 2.5%, 16px) 0; }
+.mb-cover__art svg { display: block; width: 100%; height: auto; max-height: 38%; }
+.mb-cover__hint { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: .72rem; letter-spacing: .16em; text-transform: uppercase; color: #d43d1a; margin: 0 0 clamp(8px, 2%, 14px); }
+.mb-cover__flame { color: #e8a812; font-size: 1rem; line-height: 1; }
+
+/* ---------- Reading tools + footer ---------- */
+.book-reading-tools { display: flex; justify-content: center; align-items: center; gap: 24px; padding: 2px 24px; flex-shrink: 0; }
+.book-reading-tools .text-link, .book-reading-tools a { font-size: .66rem; }
+.text-link {
+  background: none; border: 0; padding: 6px 2px; color: var(--bk-ink); cursor: pointer;
+  font-family: var(--bk-mono); font-size: .76rem; letter-spacing: .08em; text-transform: uppercase; text-decoration: none;
+  display: inline-flex; align-items: center; min-height: 42px;
+}
+.text-link:hover:not(:disabled) { color: var(--bk-accent); }
+.text-link:disabled { opacity: .35; cursor: default; }
+.reader-footer { display: flex; align-items: center; justify-content: space-between; padding: 9px 24px; gap: 12px; border-top: 1px solid var(--bk-line); }
+#reader-position { text-align: center; font-size: .6rem; }
+
+/* ---------- Responsive (mirrors JINX) ---------- */
+@media (max-width: 600px) {
+  .reader { width: calc(100% - 16px); height: 88svh; min-height: 480px; border-radius: 10px; }
+  .reader-header { padding: 10px 14px; }
+  .reader-header h2 { font-size: 1rem; overflow-wrap: anywhere; }
+  .reader-header .tiny-label { font-size: .55rem; }
+  .reader-window-controls { gap: 6px; margin-left: 10px; }
+  .reader-fullscreen { padding-inline: 8px; font-size: .62rem; min-height: 38px; }
+  .icon-button { width: 38px; height: 38px; }
+  .reader-full-page .book-page-text { inset-inline: 24px 19px; }
+  .book-view-status { margin-inline: 14px; font-size: .62rem; }
+  .reader-toolbar { padding: 8px 14px; gap: 8px 12px; }
+  .reader-toolbar label { flex: 1 1 170px; gap: 5px; font-size: .65rem; }
+  .reader-toolbar select { width: 100%; max-width: 210px; }
+  .reader-text-controls { margin: 0; }
+  .reader-text-controls button { min-height: 32px; min-width: 34px; }
+  #reader-state:not(:empty) { margin: 6px 14px; }
+  .book-stage { padding: 12px 18px; }
+  .book-page-text { inset: 44px 19px 33px 24px; line-height: 1.55; }
+  .book-running-title { top: 11px; left: 24px; right: 19px; font-size: 9px; padding-bottom: 6px; }
+  .book-folio { bottom: 10px; left: 24px; right: 19px; font-size: 9px; }
+  .book-reading-tools { gap: 14px; padding-inline: 14px; }
+  .book-reading-tools .text-link, .book-reading-tools a { font-size: .58rem; }
+  .reader-footer { padding: 5px 14px; gap: 6px; }
+  .reader-footer .text-link { font-size: .65rem; }
+  #reader-position { font-size: .52rem; }
+}
+@media (max-height: 540px) {
+  .reader { height: 94svh; min-height: 0; }
+  .reader-header { padding-block: 5px; }
+  .reader-header .tiny-label, .book-reading-tools { display: none; }
+  .reader-toolbar { padding-block: 5px; }
+  .book-stage { min-height: 100px; padding-block: 7px; }
+  .book-page-text { inset-block: 34px 24px; }
+  .book-running-title { top: 6px; padding-bottom: 3px; }
+  .book-folio { bottom: 5px; }
+  .reader-footer { padding-block: 2px; }
+}

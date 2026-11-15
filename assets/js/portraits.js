@@ -364,6 +364,9 @@
     }).join('');
   }
 
+  /* Shared with the Reading Book (assets/js/book.js) — medallion plates by figure id. */
+  window.ShivaPortraits = { figures: FIGURES, medallion: medallion };
+
   document.querySelectorAll('[data-portraits]').forEach(renderGrid);
   document.querySelectorAll('[data-portraits-strip]').forEach(renderStrip);
 })();

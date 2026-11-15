@@ -284,5 +284,8 @@
     }).join('');
   }
 
+  /* Shared with the Reading Book (assets/js/book.js) — scene plates by kind. */
+  window.ShivaScenes = { scenes: SCENES, svgFor: svgFor };
+
   document.querySelectorAll('[data-madhubani-scenes]').forEach(render);
 })();
