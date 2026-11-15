@@ -1,0 +1,245 @@
+/* =====================================================================
+   DIVINITY LAYER — shared by every page of the Śiva Purāṇa Codex
+   Madhubani-palette sacred ornament: Kailāsa silhouette + gopuram band,
+   Gaṅgā wave base, maṇḍala dividers, third-eye flame accents, rayed
+   halos, the Sacred Codices sister-section, and anchor aliases that
+   keep the codex's numbered deep-links (av-01, j-04, mv-06…) alive.
+   Palette: ink #2e1608 · turmeric #e8a812 · vermilion #d43d1a ·
+   indigo #1d4e89 · leaf #3e7d2c · lotus #e56b9f · cream #f7ead2
+   ===================================================================== */
+
+/* ---------- numbered-anchor aliases (search / glossary deep links) --- */
+.anchor-alias {
+  display: block;
+  position: relative;
+  top: -104px;               /* clear the fixed header */
+  height: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* ---------- third-eye flame accent for eyebrows ---------------------- */
+.tri-flame {
+  display: inline-block;
+  width: .62em; height: .95em;
+  vertical-align: -.08em;
+  margin-right: .45em;
+}
+
+/* ---------- maṇḍala divider ------------------------------------------ */
+.mandala-divider {
+  display: flex;
+  justify-content: center;
+  margin: 1.1rem auto .2rem;
+  line-height: 0;
+}
+.mandala-divider svg {
+  width: 54px; height: 54px;
+  animation: mandala-spin 46s linear infinite;
+}
+@keyframes mandala-spin { to { transform: rotate(360deg); } }
+
+/* ---------- THE SACRED CODICES — sister section ---------------------- */
+.codices {
+  position: relative;
+  padding: clamp(3rem, 7vw, 4.6rem) 0 clamp(2.4rem, 5vw, 3.4rem);
+}
+.codices__head { text-align: center; max-width: 720px; margin: 0 auto; }
+.codices__eyebrow {
+  font-family: var(--ff-caps);
+  font-size: var(--fs-eyebrow);
+  letter-spacing: .32em;
+  text-transform: uppercase;
+  color: var(--gold-soft);
+  margin: 0 0 .7rem;
+}
+.codices__title {
+  font-family: var(--ff-display);
+  font-weight: 500;
+  font-size: var(--fs-h2);
+  line-height: 1.08;
+  margin: 0;
+}
+.codices__lede {
+  font-family: var(--ff-display);
+  font-size: var(--fs-lede);
+  color: var(--ash-mute);
+  line-height: 1.55;
+  margin: .8rem auto 0;
+}
+.codices__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: clamp(1rem, 2vw, 1.5rem);
+  margin-top: clamp(1.8rem, 4vw, 2.6rem);
+}
+.codex-link {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: .45rem;
+  padding: 1.35rem 1.3rem 1.25rem;
+  border-radius: var(--radius-card);
+  background: var(--surface-glass);
+  border: 1px solid var(--border-soft);
+  color: var(--ash-vibhuti);
+  text-decoration: none;
+  overflow: hidden;
+  transition: transform .35s var(--ease), border-color .35s var(--ease), background .35s var(--ease);
+}
+.codex-link::before {           /* double-band folk border, top */
+  content: "";
+  position: absolute; inset: 0 0 auto 0; height: 7px;
+  background:
+    repeating-linear-gradient(45deg, #e8a812 0 9px, #d43d1a 9px 18px, #1d4e89 18px 27px, #3e7d2c 27px 36px);
+  opacity: .85;
+}
+.codex-link:hover {
+  transform: translateY(-4px);
+  border-color: var(--border-strong);
+  background: var(--surface-glass-2);
+}
+.codex-link__corner {
+  font-family: var(--ff-caps);
+  font-size: .66rem;
+  letter-spacing: .26em;
+  color: var(--gold-soft);
+  text-transform: uppercase;
+}
+.codex-link__deva { font-family: var(--ff-deva); color: var(--gold-soft); font-size: 1.3rem; line-height: 1.1; }
+.codex-link__title { font-family: var(--ff-display); font-size: 1.45rem; font-weight: 600; line-height: 1.15; }
+.codex-link__epithet { font-family: var(--ff-display); font-style: italic; color: var(--ash-mute); font-size: .98rem; }
+.codex-link__desc { color: var(--ash-mute); font-size: .93rem; line-height: 1.55; flex: 1; }
+.codex-link__cta {
+  font-family: var(--ff-caps);
+  font-size: .7rem;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--gold-trishul);
+}
+.codex-link--current {
+  border-color: var(--border-strong);
+  background: linear-gradient(180deg, rgba(217,164,65,.12), rgba(217,164,65,.03));
+  pointer-events: none;
+}
+.codex-link__here {
+  position: absolute; top: .95rem; right: .95rem;
+  font-family: var(--ff-caps);
+  font-size: .6rem; letter-spacing: .2em; text-transform: uppercase;
+  color: #2e1608; background: #e8a812;
+  padding: .28rem .55rem; border-radius: 999px;
+}
+
+/* ---------- KAILĀSA BAND — silhouette above the footer --------------- */
+.kailasa-band {
+  position: relative;
+  margin-top: clamp(2rem, 5vw, 3.5rem);
+  line-height: 0;
+  pointer-events: none;
+}
+.kailasa-band svg { width: 100%; height: auto; display: block; }
+
+/* ---------- INDEX HERO — rayed halo + Kailāsa foot ------------------- */
+.hero { position: relative; overflow: hidden; }
+.hero__halo {
+  position: absolute;
+  left: 50%; top: clamp(2.2rem, 6vw, 4.5rem);
+  transform: translateX(-50%);
+  width: min(560px, 92vw);
+  opacity: .5;
+  pointer-events: none;
+  line-height: 0;
+}
+.hero__halo svg { width: 100%; height: auto; display: block; animation: mandala-spin 90s linear infinite; }
+.hero__inner { position: relative; z-index: 1; }
+.hero__kailasa {
+  position: relative;
+  margin-top: clamp(1.6rem, 4vw, 2.6rem);
+  line-height: 0;
+  opacity: .9;
+}
+.hero__kailasa svg { width: 100%; height: auto; display: block; }
+
+/* ---------- VERSE OF THE DAY (home) ---------------------------------- */
+.verse-day__card {
+  max-width: 780px;
+  margin: 0 auto;
+  text-align: center;
+  padding: clamp(1.6rem, 4vw, 2.4rem) clamp(1.2rem, 4vw, 2.6rem);
+  border-radius: var(--radius-card);
+  background: var(--surface-glass);
+  border: 1px solid var(--border-soft);
+  position: relative;
+  overflow: hidden;
+}
+.verse-day__card::before {
+  content: "";
+  position: absolute; inset: 0 0 auto 0; height: 7px;
+  background: repeating-linear-gradient(45deg, #e8a812 0 9px, #d43d1a 9px 18px, #1d4e89 18px 27px, #e56b9f 27px 36px);
+  opacity: .85;
+}
+.verse-day__deva { font-family: var(--ff-deva); font-size: clamp(1.25rem, 1rem + 1.4vw, 1.7rem); line-height: 1.7; color: var(--ash-vibhuti); display: block; }
+.verse-day__iast { font-family: var(--ff-display); font-style: italic; color: var(--gold-soft); display: block; margin-top: .8rem; line-height: 1.6; }
+.verse-day__en { color: var(--ash-mute); display: block; margin-top: .7rem; line-height: 1.65; }
+.verse-day__src { font-family: var(--ff-caps); font-size: .66rem; letter-spacing: .26em; text-transform: uppercase; color: var(--ash-dim); display: block; margin-top: 1rem; }
+
+/* ---------- MADHUBANI CHARACTER PORTRAITS ---------------------------- */
+.pt-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(215px, 1fr));
+  gap: clamp(1rem, 2.2vw, 1.6rem);
+  margin-top: clamp(1.6rem, 3.5vw, 2.4rem);
+}
+.pt-card {
+  background: #f7ead2;
+  border: 1px solid rgba(217, 164, 65, .4);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 16px 38px rgba(0, 0, 0, .42);
+  transition: transform .35s var(--ease), box-shadow .35s var(--ease);
+}
+.pt-card:hover { transform: translateY(-5px); box-shadow: 0 24px 48px rgba(0, 0, 0, .52); }
+.pt-card__art { line-height: 0; background: #f7ead2; padding: .9rem .9rem 0; }
+.pt-card__art svg { width: 100%; height: auto; display: block; }
+.pt-card__body { padding: .65rem 1.05rem 1.1rem; color: #2e1608; text-align: center; }
+.pt-card__deva { font-family: var(--ff-deva); color: #d43d1a; font-size: 1rem; margin: 0 0 .1rem; }
+.pt-card__name { font-family: var(--ff-display); font-size: 1.32rem; font-weight: 600; line-height: 1.2; margin: 0 0 .3rem; color: #2e1608; }
+.pt-card__role { margin: 0; font-size: .88rem; line-height: 1.55; color: #57391f; }
+.pt-note {
+  text-align: center;
+  color: var(--ash-mute);
+  font-family: var(--ff-display);
+  font-style: italic;
+  font-size: 1.02rem;
+  margin-top: 1.5rem;
+}
+
+/* home teaser strip of medallions */
+.pt-strip {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: clamp(1rem, 3vw, 2rem);
+  margin-top: clamp(1.6rem, 3.5vw, 2.4rem);
+}
+.pt-strip__item {
+  display: flex; flex-direction: column; align-items: center; gap: .5rem;
+  text-decoration: none; color: var(--ash-vibhuti);
+  width: 128px;
+  transition: transform .35s var(--ease);
+}
+.pt-strip__item:hover { transform: translateY(-4px); }
+.pt-strip__item svg { width: 128px; height: 128px; display: block; filter: drop-shadow(0 10px 22px rgba(0,0,0,.45)); }
+.pt-strip__name { font-family: var(--ff-display); font-size: 1.05rem; }
+.pt-strip__deva { font-family: var(--ff-deva); color: var(--gold-soft); font-size: .9rem; margin-top: -.45rem; }
+
+@media (max-width: 420px) {
+  .pt-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
+  .pt-strip__item, .pt-strip__item svg { width: 104px; height: auto; }
+  .pt-strip__item svg { height: 104px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .mandala-divider svg, .hero__halo svg { animation: none; }
+  .pt-card, .pt-strip__item, .codex-link { transition: none; }
+  .pt-card:hover, .pt-strip__item:hover, .codex-link:hover { transform: none; }
+}

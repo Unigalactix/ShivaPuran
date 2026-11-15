@@ -26,8 +26,11 @@
   <link rel="stylesheet" href="assets/css/global.css" />
   <link rel="stylesheet" href="assets/css/search.css" />
   <link rel="stylesheet" href="assets/css/pages/tandava.css" />
+  <link rel="stylesheet" href="assets/css/divinity.css" />
 </head>
 <body>
+
+  <a class="skip" href="#main" style="position:absolute;left:-9999px;">Skip to main content</a>
 
   <!-- ============ HEADER ============ -->
   <header class="site-header">
@@ -77,7 +80,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="main">
 
     <!-- ============ HERO ============ -->
     <section class="td-hero">
@@ -220,7 +223,7 @@
       <div class="td-dances">
 
         <!-- 01 · ĀNANDA -->
-        <article class="dcard dcard--ananda">
+        <article class="dcard dcard--ananda" id="dance-1">
           <p class="dcard__num">01</p>
           <p class="dcard__deva">आनन्द ताण्डव</p>
           <h3 class="dcard__name">Ānanda Tāṇḍava</h3>
@@ -240,7 +243,7 @@
         </article>
 
         <!-- 02 · SAṀHĀRA -->
-        <article class="dcard dcard--samhara">
+        <article class="dcard dcard--samhara" id="dance-2">
           <p class="dcard__num">02</p>
           <p class="dcard__deva">संहार ताण्डव</p>
           <h3 class="dcard__name">Saṁhāra Tāṇḍava</h3>
@@ -260,7 +263,7 @@
         </article>
 
         <!-- 03 · RUDRA -->
-        <article class="dcard dcard--rudra">
+        <article class="dcard dcard--rudra" id="dance-3">
           <p class="dcard__num">03</p>
           <p class="dcard__deva">रौद्र ताण्डव</p>
           <h3 class="dcard__name">Raudra Tāṇḍava</h3>
@@ -280,7 +283,7 @@
         </article>
 
         <!-- 04 · TRIPURA -->
-        <article class="dcard dcard--tripura">
+        <article class="dcard dcard--tripura" id="dance-4">
           <p class="dcard__num">04</p>
           <p class="dcard__deva">त्रिपुर ताण्डव</p>
           <h3 class="dcard__name">Tripura Tāṇḍava</h3>
@@ -300,7 +303,7 @@
         </article>
 
         <!-- 05 · SANDHYĀ -->
-        <article class="dcard dcard--sandhya">
+        <article class="dcard dcard--sandhya" id="dance-5">
           <p class="dcard__num">05</p>
           <p class="dcard__deva">सन्ध्या ताण्डव</p>
           <h3 class="dcard__name">Sandhyā Tāṇḍava</h3>
@@ -320,7 +323,7 @@
         </article>
 
         <!-- 06 · KĀLIKĀ -->
-        <article class="dcard dcard--kalika">
+        <article class="dcard dcard--kalika" id="dance-6">
           <p class="dcard__num">06</p>
           <p class="dcard__deva">कालिका ताण्डव</p>
           <h3 class="dcard__name">Kālikā Tāṇḍava</h3>
@@ -340,7 +343,7 @@
         </article>
 
         <!-- 07 · UMĀ -->
-        <article class="dcard dcard--uma">
+        <article class="dcard dcard--uma" id="dance-7">
           <p class="dcard__num">07</p>
           <p class="dcard__deva">उमा ताण्डव</p>
           <h3 class="dcard__name">Umā Tāṇḍava</h3>
@@ -364,7 +367,7 @@
 
 
     <!-- ============ PAÑCAKṚTYA ============ -->
-    <section class="shell">
+    <section class="shell" id="pancha">
       <div class="td-pancha">
         <header class="td-section-head">
           <p class="eyebrow">Pañcakṛtya</p>
@@ -413,7 +416,7 @@
 
 
     <!-- ============ PAÑCĀNANA — FIVE FACES ============ -->
-    <section class="shell">
+    <section class="shell" id="faces">
       <header class="td-section-head">
         <p class="eyebrow">Pañcānana</p>
         <h2>The Five Faces of Śiva</h2>
@@ -527,10 +530,94 @@
       </div>
     </section>
 
+
+    <!-- ============ THE SACRED CODICES ============ -->
+    <section class="codices" aria-labelledby="codices-head">
+      <div class="shell">
+        <div class="codices__head">
+          <p class="codices__eyebrow"><svg class="tri-flame" viewBox="0 0 12 18" aria-hidden="true"><path d="M6 1 Q11 8 6 16 Q1 8 6 1Z" fill="#e8a812" stroke="#d43d1a" stroke-width="1"/><path d="M6 7 Q8.6 11 6 15 Q3.4 11 6 7Z" fill="#d43d1a"/></svg>सहचर-संहिताः · Companion Codices</p>
+          <h2 id="codices-head" class="codices__title">The Sacred Codices</h2>
+          <p class="codices__lede">Four sanctums on one shelf — the epics and the Purāṇas retold as living codices, their key scenes painted in the Madhubani folk idiom. Walk them in any order; every door opens on the same devotion in a different key.</p>
+          <div class="mandala-divider" aria-hidden="true"><svg viewBox="0 0 60 60" fill="none" stroke="#d9a441" stroke-width="1.3" aria-hidden="true"><circle cx="30" cy="30" r="27.5" opacity=".45"/><circle cx="52.5" cy="30.0" r="1.3" fill="#d9a441" stroke="none"/><circle cx="49.5" cy="41.2" r="1.3" fill="#d9a441" stroke="none"/><circle cx="41.2" cy="49.5" r="1.3" fill="#d9a441" stroke="none"/><circle cx="30.0" cy="52.5" r="1.3" fill="#d9a441" stroke="none"/><circle cx="18.8" cy="49.5" r="1.3" fill="#d9a441" stroke="none"/><circle cx="10.5" cy="41.2" r="1.3" fill="#d9a441" stroke="none"/><circle cx="7.5" cy="30.0" r="1.3" fill="#d9a441" stroke="none"/><circle cx="10.5" cy="18.8" r="1.3" fill="#d9a441" stroke="none"/><circle cx="18.7" cy="10.5" r="1.3" fill="#d9a441" stroke="none"/><circle cx="30.0" cy="7.5" r="1.3" fill="#d9a441" stroke="none"/><circle cx="41.2" cy="10.5" r="1.3" fill="#d9a441" stroke="none"/><circle cx="49.5" cy="18.7" r="1.3" fill="#d9a441" stroke="none"/><circle cx="30" cy="30" r="17"/><path d="M30 12 Q34.5 19 30 25 Q25.5 19 30 12Z" transform="rotate(0 30 30)"/><path d="M30 12 Q34.5 19 30 25 Q25.5 19 30 12Z" transform="rotate(45 30 30)"/><path d="M30 12 Q34.5 19 30 25 Q25.5 19 30 12Z" transform="rotate(90 30 30)"/><path d="M30 12 Q34.5 19 30 25 Q25.5 19 30 12Z" transform="rotate(135 30 30)"/><path d="M30 12 Q34.5 19 30 25 Q25.5 19 30 12Z" transform="rotate(180 30 30)"/><path d="M30 12 Q34.5 19 30 25 Q25.5 19 30 12Z" transform="rotate(225 30 30)"/><path d="M30 12 Q34.5 19 30 25 Q25.5 19 30 12Z" transform="rotate(270 30 30)"/><path d="M30 12 Q34.5 19 30 25 Q25.5 19 30 12Z" transform="rotate(315 30 30)"/><circle cx="30" cy="30" r="5.5" fill="#d43d1a" stroke="none"/><circle cx="30" cy="30" r="2" fill="#e8a812" stroke="none"/></svg></div>
+        </div>
+        <div class="codices__grid">
+          <a class="codex-link" href="https://unigalactix.github.io/RAMAYANA/" target="_blank" rel="noopener">
+            <span class="codex-link__corner">Codex I · Tretā</span>
+            <span class="codex-link__deva">रामायण</span>
+            <span class="codex-link__title">Rāmāyaṇa Codex</span>
+            <span class="codex-link__epithet">Vālmīki’s eternal epic</span>
+            <span class="codex-link__desc">Maryādā Puruṣottam Rāma — the exile, the bow, the war for Sītā, and the lamp-lit return to Ayodhyā.</span>
+            <span class="codex-link__cta">Open the Codex ↗</span>
+          </a>
+          <a class="codex-link" href="https://unigalactix.github.io/Mahabharat/" target="_blank" rel="noopener">
+            <span class="codex-link__corner">Codex II · Dvāpara</span>
+            <span class="codex-link__deva">महाभारत</span>
+            <span class="codex-link__title">Mahābhārata Codex</span>
+            <span class="codex-link__epithet">Where dharma is, there is victory</span>
+            <span class="codex-link__desc">Eighteen parvas, eighteen days of war on Kurukṣetra, and the eighteen chapters of the Gītā.</span>
+            <span class="codex-link__cta">Open the Codex ↗</span>
+          </a>
+          <a class="codex-link" href="https://unigalactix.github.io/BHAGAVATHAM/" target="_blank" rel="noopener">
+            <span class="codex-link__corner">Codex III · All Yugas</span>
+            <span class="codex-link__deva">भागवत</span>
+            <span class="codex-link__title">Bhāgavata Codex</span>
+            <span class="codex-link__epithet">The descents of Viṣṇu</span>
+            <span class="codex-link__desc">From Matsya to Kalki — the Daśāvatāra, the twenty-two līlā-avatāras, and the twelve Skandhas of Vyāsa’s Purāṇa.</span>
+            <span class="codex-link__cta">Open the Codex ↗</span>
+          </a>
+          <div class="codex-link codex-link--current" aria-current="page">
+            <span class="codex-link__here">You are here</span>
+            <span class="codex-link__corner">Codex IV · The Mountain</span>
+            <span class="codex-link__deva">शिवपुराण</span>
+            <span class="codex-link__title">Śiva Purāṇa Codex</span>
+            <span class="codex-link__epithet">The Lord of Beginnings &amp; Endings</span>
+            <span class="codex-link__desc">Nineteen avatāras, twelve Jyotirliṅgas, the Tāṇḍava, and the love that wedded Śiva to Pārvatī.</span>
+            <span class="codex-link__cta">You stand in this sanctum</span>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
 
   <!-- ============ FOOTER ============ -->
+
+  <!-- ============ KAILĀSA BAND — the mountain above the footer ============ -->
+  <div class="kailasa-band" aria-hidden="true">
+    <svg viewBox="0 0 1440 132" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+      <g fill="#f7ead2">
+        <circle cx="120" cy="18" r="1.6" opacity=".7"/><circle cx="330" cy="30" r="1.2" opacity=".5"/>
+        <circle cx="560" cy="14" r="1.5" opacity=".6"/><circle cx="820" cy="26" r="1.2" opacity=".5"/>
+        <circle cx="1050" cy="12" r="1.6" opacity=".7"/><circle cx="1360" cy="30" r="1.3" opacity=".5"/>
+        <circle cx="700" cy="36" r="1.1" opacity=".45"/><circle cx="180" cy="44" r="1.1" opacity=".4"/>
+      </g>
+      <path d="M1188 22 A15 15 0 1 0 1188 46 A11.5 11.5 0 1 1 1188 22Z" fill="#fdf6da" opacity=".92"/>
+      <circle cx="1184" cy="31" r="1.4" fill="#2e1608"/><path d="M1179 39 q4 2.6 8 .8" fill="none" stroke="#2e1608" stroke-width="1.2"/>
+      <path d="M0 132 L0 88 L140 62 L260 92 L380 54 L520 90 L640 66 L760 96 L900 58 L1030 90 L1150 64 L1280 94 L1440 70 L1440 132Z" fill="#1d4e89" opacity=".30"/>
+      <path d="M368 61 L380 54 L392 61 L385 64 L380 61 L375 64Z" fill="#f7ead2" opacity=".85"/>
+      <path d="M889 64 L900 58 L911 64 L904 67 L900 64 L896 67Z" fill="#f7ead2" opacity=".85"/>
+      <path d="M0 132 L0 104 L180 74 L330 106 L470 70 L620 104 L760 78 L920 108 L1080 76 L1240 106 L1440 84 L1440 132Z" fill="#1a1730"/>
+      <path d="M169 80 L180 74 L191 80 L184 83 L180 80 L176 83Z" fill="#f7ead2" opacity=".7"/>
+      <path d="M459 76 L470 70 L481 76 L474 79 L470 76 L466 79Z" fill="#f7ead2" opacity=".7"/>
+      <path d="M1069 82 L1080 76 L1091 82 L1084 85 L1080 82 L1076 85Z" fill="#f7ead2" opacity=".7"/>
+      <path d="M0 132 L0 116 L200 106 L420 118 L640 108 L860 120 L1100 108 L1300 118 L1440 110 L1440 132Z" fill="#0d0a1c"/>
+      <g fill="#100c22" stroke="rgba(217,164,65,.45)" stroke-width="1.2">
+        <path d="M664 132 L776 132 L764 108 L676 108Z"/>
+        <path d="M676 108 L764 108 L754 88 L686 88Z"/>
+        <path d="M686 88 L754 88 L746 70 L694 70Z"/>
+        <path d="M694 70 L746 70 L740 54 L700 54Z"/>
+        <path d="M700 54 L740 54 L734 42 L706 42Z"/>
+      </g>
+      <g stroke="rgba(217,164,65,.35)" stroke-width="1"><line x1="679" y1="98" x2="761" y2="98"/><line x1="689" y1="79" x2="751" y2="79"/><line x1="697" y1="62" x2="743" y2="62"/></g>
+      <g fill="#e8a812"><circle cx="706" cy="38" r="2.4"/><circle cx="720" cy="33" r="2.8"/><circle cx="734" cy="38" r="2.4"/></g>
+      <path d="M720 30 v-12 M713 22 q0 5 7 5 q7 0 7 -5 M713 22 v-3 M727 22 v-3" fill="none" stroke="#e8a812" stroke-width="1.8"/>
+      <path d="M712 132 L712 117 Q720 109 728 117 L728 132Z" fill="#07050f"/>
+      <circle cx="720" cy="122" r="2.2" fill="#e8a812"/>
+      <path d="M0 127 Q60 119 120 127 T240 127 T360 127 T480 127 T600 127 T720 127 T840 127 T960 127 T1080 127 T1200 127 T1320 127 T1440 127" fill="none" stroke="#33629e" stroke-width="2.4" opacity=".85"/>
+      <path d="M0 131 Q60 124 120 131 T240 131 T360 131 T480 131 T600 131 T720 131 T840 131 T960 131 T1080 131 T1200 131 T1320 131 T1440 131" fill="none" stroke="#7db8dd" stroke-width="1.8" opacity=".5"/>
+    </svg>
+  </div>
+
   <footer class="site-footer">
     <div class="shell">
       <div class="om" aria-hidden="true">ॐ</div>
@@ -541,6 +628,7 @@
         <a href="https://unigalactix.github.io/RAMAYANA/"   target="_blank" rel="noopener">Rāmāyaṇa ↗</a>
         <a href="https://unigalactix.github.io/BHAGAVATHAM/" target="_blank" rel="noopener">Bhāgavata ↗</a>
         <a href="https://unigalactix.github.io/Mahabharat/" target="_blank" rel="noopener">Mahābhārata ↗</a>
+        <a href="https://unigalactix.github.io/ShivaPuran/" target="_blank" rel="noopener">Śiva Purāṇa ↗</a>
       </div>
 
       <small>ŚIVA PURĀṆA CODEX · A DEVOTIONAL RETELLING · © <span data-year>2026</span> · CRAFTED WITH REVERENCE</small>
